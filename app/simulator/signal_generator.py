@@ -1,4 +1,4 @@
-from khompressor.app.simulator.physics import Physics
+from app.simulator.physics import Physics
 
 class SignalGenerator:
     x = []

@@ -1,8 +1,8 @@
 from django.http import HttpResponse
-from khompressor.app.simulator.signal_generator import SignalGenerator
-from khompressor.app.simulator.pylsa import Pylsa
-from khompressor.app.simulator.fourier import Fourier
-from khompressor.app.simulator.simmaths import Simmaths
+from app.simulator.signal_generator import SignalGenerator
+from app.simulator.pylsa import Pylsa
+from app.simulator.fourier import Fourier
+from app.simulator.simmaths import Simmaths
 import numpy as np
 import json
 import math
