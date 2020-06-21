@@ -1,594 +1,927 @@
+<!doctype html>
 <!--
-=========================================================
-* Argon Dashboard - v1.2.0
-=========================================================
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-
-
-* Copyright  Creative Tim (http://www.creative-tim.com)
-* Coded by www.creative-tim.com
-
-
-
-=========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+* Tabler - Premium and Open Source dashboard template with responsive and high quality UI.
+* @version 1.0.0-alpha.7
+* @link https://github.com/tabler/tabler
+* Copyright 2018-2019 The Tabler Authors
+* Copyright 2018-2019 codecalm.net Paweł Kuna
+* Licensed under MIT (https://tabler.io/license)
 -->
-<!DOCTYPE html>
-<html>
+<html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
-        <meta name="author" content="Creative Tim">
-        <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
-        <!-- Favicon -->
-        <link rel="icon" href="/static/img/brand/favicon.png" type="image/png">
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-        <!-- Icons -->
-        <link rel="stylesheet" href="/static/vendor/nucleo/css/nucleo.css" type="text/css">
-        <link rel="stylesheet" href="/static/css/compass/compass.css" type="text/css">
-        <link rel="stylesheet" href="/static/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
-        <!-- Page plugins -->
-        <!-- Argon CSS -->
-        <link rel="stylesheet" href="/static/css/argon.css?v=1.2.0" type="text/css"> {% comment %}
-        <link rel="stylesheet" href="/static/css/loading.css" type="text/css"> {% endcomment %}
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dashboard - Tabler - Premium and Open Source dashboard template with responsive and high quality UI.</title>
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin> -->
+    <meta name="msapplication-TileColor" content="#206bc4" />
+    <meta name="theme-color" content="#206bc4" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <!-- CSS files -->
+    <link href="/static/dist/libs/jqvmap/dist/jquery.vmap.min.jss" rel="stylesheet" />
+    <link href="/static/dist/css/tabler.min.css" rel="stylesheet" />
+    <link href="/static/dist/css/demo.min.css" rel="stylesheet" />
+    <style>
+        body {
+            display: none;
+        }
+    </style>
+</head>
 
-    <body>
-        <div class='sim_overlay' style="
-    width: 100%;
-    background: rgb(255,255,255);
-background: radial-gradient(circle, rgba(255,255,255,1) 12%, rgba(173,173,173,0.39399509803921573) 100%);
-    height: 100%;
-    z-index: 99999999;
-    position: fixed;
-    display:none
-">
-            <div style=''>
-                <img src="/static/img/loading-opaque.gif" style='top: 35%;
-    left: 45%;
-    position: fixed;'>
-
-                <div class="content" style=''>
-                    <div class="random" style='
-    position: fixed;
-    top: 60%;
-    left: 42%;
-    color: rebeccapurple;
-    font-style: italic;
-    font-weight: 600;
-    font-size: 30px;
-    text-align-last: left;
-        
-
-    font-family: "Orbitron";
-    text-transform: uppercase;
-    
-
-    '>
-                        <span class="span nbr ltr">0</span>
-                        <span class="span nbr ltr">0</span>
-                        <span class="span nbr ltr">0</span>
-                        <span class="span nbr ltr">0</span>
-                        <span class="span nbr ltr">0</span>
-                        <span class="span nbr ltr">0</span>
-                        <span class="span nbr ltr">0</span>
-                        <span class="span nbr ltr">0</span>
-                        <span class="span nbr ltr">0</span>
-                        <span class="span nbr ltr">0</span>
-                        <span class="span nbr ltr">0</span>
-                        <span class="span nbr ltr">0</span>
-                        <span class="span nbr ltr">0</span>
-                        <span class="span nbr ltr">0</span>
-                        <span class="span nbr ltr">0</span>
+<body class="antialiased">
+    <div class="page">
+        <header class="navbar navbar-expand-md navbar-light">
+            <div class="container-xl">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a href="." class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pr-0 pr-md-3">
+                    <img src="./static/logo.svg" alt="Tabler" class="navbar-brand-image">
+                </a>
+                <div class="navbar-nav flex-row order-md-last">
+                    <div class="nav-item dropdown d-none d-md-flex mr-3">
+                        <a href="#" class="nav-link px-0" data-toggle="dropdown" tabindex="-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" />
+                                <path
+                                    d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                                <path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
+                            <span class="badge bg-red"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad amet
+                                    consectetur exercitationem
+                                    fugiat in ipsa ipsum, natus odio quidem quod repudiandae sapiente. Amet debitis et
+                                    magni maxime
+                                    necessitatibus ullam.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-toggle="dropdown">
+                            <span class="avatar" style="background-image: url(./static/avatars/000m.jpg)"></span>
+                            <div class="d-none d-xl-block pl-2">
+                                <div>Paweł Kuna</div>
+                                <div class="mt-1 small text-muted">UI Designer</div>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon dropdown-item-icon" width="24"
+                                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path
+                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                    <circle cx="12" cy="12" r="3" /></svg>
+                                Action
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon dropdown-item-icon" width="24"
+                                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M9 7 h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
+                                    <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
+                                    <line x1="16" y1="5" x2="19" y2="8" /></svg>
+                                Another action
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                                    class="icon dropdown-item-icon" width="24" height="24" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <line x1="12" y1="5" x2="12" y2="19" />
+                                    <line x1="5" y1="12" x2="19" y2="12" /></svg>
+                                Separated link</a>
+                        </div>
                     </div>
                 </div>
-
-
             </div>
-
+        </header>
+        <div class="navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <div class="navbar navbar-light">
+                    <div class="container-xl">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="./index.html">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block"><svg
+                                            xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                                            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                                            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+                                    </span>
+                                    <span class="nav-link-title">
+                                        Home
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#navbar-base" data-toggle="dropdown"
+                                    role="button" aria-expanded="false">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block"><svg
+                                            xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3" />
+                                            <line x1="12" y1="12" x2="20" y2="7.5" />
+                                            <line x1="12" y1="12" x2="12" y2="21" />
+                                            <line x1="12" y1="12" x2="4" y2="7.5" />
+                                            <line x1="16" y1="5.25" x2="8" y2="9.75" /></svg>
+                                    </span>
+                                    <span class="nav-link-title">
+                                        User Interface
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-columns  dropdown-menu-columns-2">
+                                    <li>
+                                        <a class="dropdown-item" href="./empty.html">
+                                            Empty page
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./blank.html">
+                                            Blank page
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./buttons.html">
+                                            Buttons
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./cards.html">
+                                            Cards
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./dropdowns.html">
+                                            Dropdowns
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./icons.html">
+                                            Icons
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./modals.html">
+                                            Modals
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./maps.html">
+                                            Maps
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./maps-vector.html">
+                                            Vector maps
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./navigation.html">
+                                            Navigation
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./charts.html">
+                                            Charts
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./tables.html">
+                                            Tables
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./calendar.html">
+                                            Calendar
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./carousel.html">
+                                            Carousel
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./lists.html">
+                                            Lists
+                                        </a>
+                                    </li>
+                                    <li class="dropright">
+                                        <a class="dropdown-item dropdown-toggle" href="#sidebar-authentication"
+                                            data-toggle="dropdown" role="button" aria-expanded="false">
+                                            Authentication
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a href="./sign-in.html" class="dropdown-item">Sign in</a>
+                                            <a href="./sign-up.html" class="dropdown-item">Sign up</a>
+                                            <a href="./forgot-password.html" class="dropdown-item">Forgot password</a>
+                                            <a href="./terms-of-service.html" class="dropdown-item">Terms of service</a>
+                                        </div>
+                                    </li>
+                                    <li class="dropright">
+                                        <a class="dropdown-item dropdown-toggle" href="#sidebar-error"
+                                            data-toggle="dropdown" role="button" aria-expanded="false">
+                                            Error pages
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <a href="./400.html" class="dropdown-item">400 page</a>
+                                            <a href="./401.html" class="dropdown-item">401 page</a>
+                                            <a href="./403.html" class="dropdown-item">403 page</a>
+                                            <a href="./404.html" class="dropdown-item">404 page</a>
+                                            <a href="./500.html" class="dropdown-item">500 page</a>
+                                            <a href="./503.html" class="dropdown-item">503 page</a>
+                                            <a href="./maintenance.html" class="dropdown-item">Maintenance page</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./form-elements.html">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block"><svg
+                                            xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <polyline points="9 11 12 14 20 6" />
+                                            <path
+                                                d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" />
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title">
+                                        Form elements
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#navbar-extra" data-toggle="dropdown"
+                                    role="button" aria-expanded="false">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block"><svg
+                                            xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path
+                                                d="M12 17.75l-6.172 3.245 1.179-6.873-4.993-4.867 6.9-1.002L12 2l3.086 6.253 6.9 1.002-4.993 4.867 1.179 6.873z" />
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title">
+                                        Extra
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="./invoice.html">
+                                            Invoice
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./blog.html">
+                                            Blog cards
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./snippets.html">
+                                            Snippets
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./search-results.html">
+                                            Search results
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./pricing.html">
+                                            Pricing cards
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./users.html">
+                                            Users
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./gallery.html">
+                                            Gallery
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./profile.html">
+                                            Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./music.html">
+                                            Music
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#navbar-layout" data-toggle="dropdown"
+                                    role="button" aria-expanded="false">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block"><svg
+                                            xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x="4" y="4" width="6" height="5" rx="2" />
+                                            <rect x="4" y="13" width="6" height="7" rx="2" />
+                                            <rect x="14" y="4" width="6" height="7" rx="2" />
+                                            <rect x="14" y="15" width="6" height="5" rx="2" /></svg>
+                                    </span>
+                                    <span class="nav-link-title">
+                                        Layout
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="./layout-horizontal.html">
+                                            Horizontal
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./layout-vertical.html">
+                                            Vertical
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./layout-vertical-right.html">
+                                            Right vertical
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./layout-condensed.html">
+                                            Condensed
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./layout-condensed-dark.html">
+                                            Condensed dark
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./layout-combo.html">
+                                            Combined
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./layout-navbar-dark.html">
+                                            Navbar dark
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./layout-dark.html">
+                                            Dark mode
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./layout-fluid.html">
+                                            Fluid
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./layout-fluid-vertical.html">
+                                            Fluid vertical
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#navbar-docs" data-toggle="dropdown"
+                                    role="button" aria-expanded="false">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block"><svg
+                                            xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <polyline points="14 3 14 8 19 8" />
+                                            <path
+                                                d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                                            <line x1="9" y1="9" x2="10" y2="9" />
+                                            <line x1="9" y1="13" x2="15" y2="13" />
+                                            <line x1="9" y1="17" x2="15" y2="17" /></svg>
+                                    </span>
+                                    <span class="nav-link-title">
+                                        Docs
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-columns  dropdown-menu-columns-3">
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/index.html">
+                                            Introduction
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/alerts.html">
+                                            Alerts
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/autosize.html">
+                                            Autosize
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/avatars.html">
+                                            Avatars
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/badges.html">
+                                            Badges
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/breadcrumb.html">
+                                            Breadcrumb
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/buttons.html">
+                                            Buttons
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/cards.html">
+                                            Cards
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/carousel.html">
+                                            Carousel
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/colors.html">
+                                            Colors
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/countup.html">
+                                            Countup
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/cursors.html">
+                                            Cursors
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/charts.html">
+                                            Charts
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/dropdowns.html">
+                                            Dropdowns
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/divider.html">
+                                            Divider
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/empty.html">
+                                            Empty states
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/flags.html">
+                                            Flags
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/form-elements.html">
+                                            Form elements
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/form-helpers.html">
+                                            Form helpers
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/input-mask.html">
+                                            Form input mask
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/modals.html">
+                                            Modals
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/progress.html">
+                                            Progress
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/payments.html">
+                                            Payments
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/range-slider.html">
+                                            Range slider
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/ribbons.html">
+                                            Ribbons
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/spinners.html">
+                                            Spinners
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/steps.html">
+                                            Steps
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/tables.html">
+                                            Tables
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/tabs.html">
+                                            Tabs
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/timelines.html">
+                                            Timelines
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/toasts.html">
+                                            Toasts
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/tooltips.html">
+                                            Tooltips
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="./docs/typography.html">
+                                            Typography
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
+                            <form action="." method="get">
+                                <div class="input-icon">
+                                    <span class="input-icon-addon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <circle cx="10" cy="10" r="7" />
+                                            <line x1="21" y1="21" x2="15" y2="15" /></svg>
+                                    </span>
+                                    <input type="text" class="form-control" placeholder="Search…">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Sidenav -->
-
-        <!-- Main content -->
-        <div class="main-content" id="panel">
-            <!-- Topnav -->
-
-            <!-- Header -->
-            <!-- Header -->
-            <div class="header bg-primary pb-6">
-                <div class="container-fluid">
-                    <div class="header-body">
-                        <div class="row align-items-center py-4">
-                            <div class="col-lg-6 col-7">
-                                <h6 style='font-size: 50px;font-family:"Suez One" , "serif" '
-                                    class="h2 text-white d-inline-block mb-0">khompressor</h6>
-                            </div>
-
-                        </div>
-                        <!-- Card stats !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-          
-          -->
-
-                    </div>
-                </div>
-            </div>
-            <!-- Page content -->
-
-
-
-
-
-            <div class="container-fluid mt--6">
-                <div style=''>
-                    <div class="row">
-                        <div class="col-xl-2"></div>
-                        <div class="col-xl-4">
-                            <div class="card">
-                                <div class="card-header border-0">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h3 class="mb-0">Simulation</h3>
-                                        </div>
-                                        <div class="col text-right">
-                                            <a href="javascript:void(0)" id='start_simulation'
-                                                class="btn btn-sm btn-primary">Start
-                                                simulation</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <!-- Projects table -->
-                                    <table class="table align-items-center table-flush">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th scope="col">Parameter</th>
-                                                <th scope="col">Value</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">
-                                                    Delta T
-                                                </th>
-                                                <td>
-
-                                                    <div class="row">
-                                                        <div class="col-lg-8">
-                                                            <div class="form-group" style='margin-bottom:0'>
-                                                                <input type="text" id="system_delta_t"
-                                                                    class="form-control" placeholder="Delta T"
-                                                                    value="0.1">
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    Mass height
-                                                </th>
-                                                <td>
-
-
-
-                                                    <div class="row">
-                                                        <div class="col-lg-8">
-                                                            <div class="form-group" style='margin-bottom:0'>
-                                                                <input type="text" id="system_long" class="form-control"
-                                                                    placeholder="Mass height" value="5">
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-
-
-
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    Damping (0 - x - 1)
-                                                </th>
-                                                <td>
-
-                                                    <div class="row">
-                                                        <div class="col-lg-8">
-                                                            <div class="form-group" style='margin-bottom:0'>
-                                                                <input type="text" id="system_damping"
-                                                                    class="form-control" placeholder="Damping"
-                                                                    value="0.1">
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    System Acceleration
-                                                </th>
-                                                <td>
-
-
-
-                                                    <div class="row">
-                                                        <div class="col-lg-8">
-                                                            <div class="form-group" style='margin-bottom:0'>
-                                                                <input type="text" id="system_acc" class="form-control"
-                                                                    placeholder="Acceleration" value="10">
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-
-
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    Braking Acceleration
-                                                </th>
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col-lg-8">
-                                                            <div class="form-group" style='margin-bottom:0'>
-                                                                <input type="text" id="system_braking"
-                                                                    class="form-control" placeholder="Braking"
-                                                                    value="5">
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4">
-                            <div class="card">
-                                <div class="card-header border-0">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h3 class="mb-0">Enviroment conditions</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <!-- Projects table -->
-                                    <table class="table align-items-center table-flush">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th scope="col">Parameter</th>
-                                                <th scope="col">Value</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">
-                                                    System Gain [k]
-                                                    <div class="ttip">
-
-                                                        <div class='' style='    
-                                                        position: fixed;
-                                                     margin-top: -27px;
-                                                   /* margin-left: 100px; */
-                                                    font-size: 35px;
-                                                    font-family: "Suez One" , "serif";'>?</div>
-
-                                                        <div class="popup">
-                                                            <div class="row header">
-                                                                <span>System Gain</span>
-                                                            </div>
-                                                            <div class="row items">
-                                                                <span style='margin-right: 10px;
-                                                                margin-left: 5px;
-                                                                font-family: "Suez One" , "serif";
-                                                                font-size: 30px;
-                                                                color: green;
-                                                                margin-top: -7px;'>!</span>
-                                                                <span>It means the system compensation.</span>
-
-
-                                                            </div>
-                                                            <span style='font-size: 15px;
-                                                            margin-left: 15px;
-                                                            color: black;
-                                                            font-weight: 100;max-width: 350px;
-    white-space: normal;'>
-                                                                The relation between x (rail long. in meters) and l
-                                                                (massless cable long. in meters)
-                                                            </span>
-                                                            <div class="row checkout">
-                                                                <img src="/static/img/tooltip/system.png"></img>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <!--i cant use the BUTTON tag -->
-                                                </th>
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col-lg-8">
-                                                            <div class="form-group" style='margin-bottom:0'>
-                                                                <input type="text" id="system_acc" class="form-control"
-                                                                    placeholder="Acceleration" value="10">
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    Acceleration (m/s²)
-                                                </th>
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col-lg-8">
-                                                            <div class="form-group" style='margin-bottom:0'>
-                                                                <input type="text" id="system_acc" class="form-control"
-                                                                    placeholder="Acceleration" value="10">
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    Braking (m/s²)
-                                                </th>
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col-lg-8">
-                                                            <div class="form-group" style='margin-bottom:0'>
-                                                                <input type="text" id="system_acc" class="form-control"
-                                                                    placeholder="Acceleration" value="10">
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    Max System Velocity (m/s)
-                                                </th>
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col-lg-8">
-                                                            <div class="form-group" style='margin-bottom:0'>
-                                                                <input type="text" id="system_acc" class="form-control"
-                                                                    placeholder="Acceleration" value="10">
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    twitter
-                                                </th>
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col-lg-8">
-                                                            <div class="form-group" style='margin-bottom:0'>
-                                                                <input type="text" id="system_acc" class="form-control"
-                                                                    placeholder="Acceleration" value="10">
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2"></div>
-                    </div>
-
-                </div>
-
-
-                <div class='stage1' style='opacity:0;display:none'>
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="card bg-default">
-                                <div class="card-header bg-transparent">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h6 class="text-light text-uppercase ls-1 mb-1">System</h6>
-                                            <h5 class="h3 text-white mb-0">Random Input</h5>
-                                        </div>
-                                        <div class="col">
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <!-- Chart -->
-                                    <div class="chart">
-                                        <!-- Chart wrapper -->
-                                        <canvas id="system_x" class="chart-canvas"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="card bg-default">
-                                <div class="card-header bg-transparent">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h6 class="text-light text-uppercase ls-1 mb-1">System</h6>
-                                            <h5 class="h3 text-white mb-0">Velocity</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <!-- Chart -->
-                                    <div class="chart">
-                                        <canvas id="system_velocity" class="chart-canvas"></canvas>
-                                    </div>
-                                </div>
-                            </div>
+        <div class="content">
+            <div class="container-xl">
+                <!-- Page title -->
+                <div class="page-header">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <h2 class="page-title">
+                                Simulation
+                            </h2>
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6 col-xl-4">
+                        <div class="card">
+                            <div class="card-body">
 
-                <div class='stage2' style='opacity:0%;display:none'>
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="card bg-default">
-                                <div class="card-header bg-transparent">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h6 class="text-light text-uppercase ls-1 mb-1">Static simulation</h6>
-                                            <h5 class="h3 text-white mb-0">Output</h5>
-                                        </div>
-                                        <div class="col">
+                                <div class="form-group mb-3 row">
+                                    <label style='margin-top: 20px;' class="form-label col-6 col-form-label">Signal
+                                        Waveform</label>
+                                    <div class="col">
+                                        <svg id='menu_shape_deploy' style='width: 48px;height: 48px;margin-top: 15px;'
+                                            xmlns="http://www.w3.org/2000/svg" class="icon icon-md" width="24"
+                                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <circle cx="12" cy="12" r="9"></circle>
+                                            <line x1="9" y1="12" x2="15" y2="12"></line>
+                                            <line x1="12" y1="9" x2="12" y2="15"></line>
+                                        </svg> </div>
+                                </div>
 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <!-- Chart -->
-                                    <div class="chart">
-                                        <!-- Chart wrapper -->
-                                        <canvas id="system_static_output" class="chart-canvas"></canvas>
-                                    </div>
-                                </div>
                             </div>
                         </div>
-                        <div class="col-xl-6">
-                            <div class="card bg-default">
-                                <div class="card-header bg-transparent">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h6 class="text-light text-uppercase ls-1 mb-1">Static simulation</h6>
-                                            <h5 class="h3 text-white mb-0">Frequency Spectrum</h5>
-                                        </div>
-                                    </div>
+
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="form-group mb-3 row">
+                                    <label style='margin-top: 20px;' class="form-label col-6 col-form-label">System
+                                        params</label>
+                                    <div class="col">
+                                        <svg id='menu_shape_deploy' style='width: 48px;height: 48px;margin-top: 15px;'
+                                            xmlns="http://www.w3.org/2000/svg" class="icon icon-md" width="24"
+                                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                                            <circle cx="12" cy="12" r="9"></circle>
+                                            <line x1="9" y1="12" x2="15" y2="12"></line>
+                                            <line x1="12" y1="9" x2="12" y2="15"></line>
+                                        </svg> </div>
                                 </div>
-                                <div class="card-body">
-                                    <!-- Chart -->
-                                    <div class="chart">
-                                        <canvas id="system_static_spectrum" class="chart-canvas"></canvas>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
+
+
                     </div>
-                </div>
-
-                <div class='stage3' style='opacity:0%;display:none'>
-                    <div class="row">
-                        <div class="col-xl-4">
-                            <div class="card bg-default">
-                                <div class="card-header bg-transparent">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h6 class="text-light text-uppercase ls-1 mb-1">Static Optimal Spectrum</h6>
-                                            <h5 class="h3 text-white mb-0">Output</h5>
-                                        </div>
-                                        <div class="col">
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <!-- Chart -->
-
-                                    <div class="chart">
-                                        <!-- Chart wrapper -->
-                                        <canvas id="system_static_optimal_output" class="chart-canvas"></canvas>
-                                        <div id='timeline_1' style='height: 250px;
-                                    width: 1px;
-                                    position: absolute;
-                                    top: -15px;
-                                    left: 51px;
-                                    z-index: 99999;
-                                    
-                                    -webkit-filter: blur(2px);
-                                    -moz-filter: blur(2px);
-                                    -o-filter: blur(2px);
-                                    -ms-filter: blur(2px);
-                                    filter: blur(2px);
-                                    background-color: #17B200
-                                    
-                                    ;'></div>
-
-                                        <div id='timemarker_1' style='height: 8px;
-                                    border-radius: 50%;
-                                    width: 8px;
-                                    background-color: red;
-                                    position: absolute;
-                                    top: 325px;
-                                    left: 48px;
-                                    z-index: 99999
-                                
-                                    ;'></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4">
-                            <div class="card bg-default">
-                                <div class="card-header bg-transparent">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h6 class="text-light text-uppercase ls-1 mb-1">Static simulation</h6>
-                                            <h5 class="h3 text-white mb-0">Frequency Spectrum</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <!-- Chart -->
-                                    <div class="chart">
-                                        <canvas id="system_static_optimal_spectrum" class="chart-canvas"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4" style='background-color: #f8f9fe !important;'>
-                            <div class="car bg-default" style='background-color: #f8f9fe !important;'>
-                                <div class="card-header bg-transparent" style='border:0'>
-
-                                </div>
-                                <div class="card-body">
-                                    <!-- Chart -->
-                                    <div class="chart">
-                                        <div id="system_static_angle_deviation" class="chart-canvas"
-                                            style='margin-top:-60px'>
-                                            <div class="clock-container"
-                                                style='  transform: rotate(-90deg);margin:auto'>
-                                                <div class="clock-digital" style ='display: none;'>
-                                                    <div class="date"></div>
-                                                    <div class="time"></div>
-                                                    <div class="day"> </div>
+                    <div class="col-md-6 col-xl-8">
+                        <div style='position: absolute; width:800px' id='wave_shape_menu'>
+                            <div class="card-tabs">
+                                <!-- Cards navigation -->
+                                <ul class="nav nav-tabs tab-signals">
+                                    <li class="nav-item"><a accesskey='1' href="#tab-top-1" class="nav-link active"
+                                            data-toggle="tab">Step</a>
+                                    </li>
+                                    <li class="nav-item"><a accesskey='2' href="#tab-top-2" class="nav-link"
+                                            data-toggle="tab">Square</a>
+                                    </li>
+                                    <li class="nav-item"><a accesskey='3' href="#tab-top-3" class="nav-link"
+                                            data-toggle="tab">Ramp</a>
+                                    </li>
+                                    <li class="nav-item"><a accesskey='4' href="#tab-top-4" class="nav-link"
+                                            data-toggle="tab">Acceleration</a></li>
+                                    <li class="nav-item"><a accesskey='5' href="#tab-top-5" class="nav-link"
+                                            data-toggle="tab">Random</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <!-- Content of card #1 -->
+                                    <div id="tab-top-1" class="card tab-pane active show">
+                                        <div class="card-body">
+                                            <div class="card-title">Step Input (Dirak's Step)</div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-xl-4">
+                                                    <fieldset class="form-fieldset fs1">
+                                                        <div class="mb-3">
+                                                            <label class="form-label">t0 (offset) [s]</label>
+                                                            <input type="text" class="form-control" autocomplete="off"
+                                                                value=5 />
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Amplitude [m]</label>
+                                                            <input type="text" class="form-control" autocomplete="off"
+                                                                value=1 />
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <a href="javascript:void(0);"
+                                                                style='width: 90px;float: left;'
+                                                                class="refreshbtn btn btn-primary btn-pill btn-block">
+                                                                Refresh
+                                                            </a>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <a href="javascript:void(0);"
+                                                                style='width: 90px;float: right;'
+                                                                class="btn btn-success btn-pill btn-block">
+                                                                Next
+                                                            </a>
+                                                        </div>
+                                                    </fieldset>
                                                 </div>
-                                                <div class="clock-analog">
-                                                    <div class="spear"></div>
-                                                    <div class="hour"></div>
-                                                    <div class="minute"></div>
-                                                    <div class="second"></div>
-                                                    <div class="dail"></div>
+                                                <div class="col-md-6 col-xl-8">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <canvas class="f_activ fss fss1" id="system_x"></canvas>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- Content of card #2 -->
+                                    <div id="tab-top-2" class="card tab-pane">
+                                        <div class="card-body">
+                                            <div class="card-title">Square wave</div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-xl-4">
+
+
+
+                                                    <fieldset class="form-fieldset fs2">
+                                                        <div class="mb-3">
+                                                            <label class="form-label">t0 (offset) [s]</label>
+                                                            <input type="text" class="form-control" autocomplete="off"
+                                                                value=1 />
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Step 'on' time [s]</label>
+                                                            <input type="text" class="form-control" autocomplete="off"
+                                                                value=2 />
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Step 'off' time [s]</label>
+                                                            <input type="text" class="form-control" autocomplete="off"
+                                                                value=2 />
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Amplitude [m]</label>
+                                                            <input type="text" class="form-control" autocomplete="off"
+                                                                value=2 />
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <a href="javascript:void(0);"
+                                                                style='width: 90px;float: left;'
+                                                                class="refreshbtn btn btn-primary btn-pill btn-block">
+                                                                Refresh
+                                                            </a>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <a href="javascript:void(0);"
+                                                                style='width: 90px;float: right;'
+                                                                class="btn btn-success btn-pill btn-block">
+                                                                Next
+                                                            </a>
+                                                        </div>
+                                                    </fieldset>
+
+
+
+                                                </div>
+                                                <div class="col-md-6 col-xl-8">
+
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <canvas class="fss fss2" id="system_x"></canvas>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- Content of card #3 -->
+                                    <div id="tab-top-3" class="card tab-pane">
+                                        <div class="card-body">
+                                            <div class="card-title">Square wave</div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-xl-6">
+
+
+
+                                                    <fieldset class="form-fieldset fs3">
+                                                        <div class="mb-3">
+                                                            <label class="form-label">t0 (offset) [s]</label>
+                                                            <input type="text" class="form-control" autocomplete="off"
+                                                                value=5 />
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">time [s] (max. 20)</label>
+                                                            <input type="text" class="form-control" autocomplete="off"
+                                                                value=5 />
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Max. Amplitude </label>
+                                                            <input type="text" class="form-control" autocomplete="off"
+                                                                value=1 />
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <a href="javascript:void(0);"
+                                                                style='width: 90px;float: left;'
+                                                                class="refreshbtn btn btn-primary btn-pill btn-block">
+                                                                Refresh
+                                                            </a>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <a href="javascript:void(0);"
+                                                                style='width: 90px;float: right;'
+                                                                class="btn btn-success btn-pill btn-block">
+                                                                Next
+                                                            </a>
+                                                        </div>
+                                                    </fieldset>
+
+
+
+                                                </div>
+                                                <div class="col-md-6 col-xl-6">
+
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div id="chart-completion-tasks3"></div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- Content of card #4 -->
+                                    <div id="tab-top-4" class="card tab-pane">
+                                        <div class="card-body">
+                                            <div class="card-title">Acceleration</div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-xl-4">
+
+
+
+                                                    <fieldset class="form-fieldset fs4">
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Acceleration movement
+                                                                [m/s²]</label>
+                                                            <input type="text" class="form-control" autocomplete="off"
+                                                                value=1 />
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Acceleration braking
+                                                                [m/s²]</label>
+                                                            <input type="text" class="form-control" autocomplete="off"
+                                                                value=0.5 />
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Max. Velocity [m/s]</label>
+                                                            <input type="text" class="form-control" autocomplete="off"
+                                                                value=40 />
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Allow Backward</label>
+                                                            <input type="text" class="form-control"
+                                                                autocomplete="off" />
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <a href="javascript:void(0);"
+                                                                style='width: 90px;float: left;'
+                                                                class="refreshbtn btn btn-primary btn-pill btn-block">
+                                                                Refresh
+                                                            </a>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <a href="javascript:void(0);"
+                                                                style='width: 90px;float: right;'
+                                                                class="btn btn-success btn-pill btn-block">
+                                                                Next
+                                                            </a>
+                                                        </div>
+                                                    </fieldset>
+
+
+
+                                                </div>
+                                                <div class="col-md-6 col-xl-8">
+
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div id="chart-completion-tasks4"></div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -596,296 +929,283 @@ background: radial-gradient(circle, rgba(255,255,255,1) 12%, rgba(173,173,173,0.
                         </div>
                     </div>
                 </div>
-
-                <!-- Footer -->
-                <footer class="footer pt-0">
-                    <div class="row align-items-center justify-content-lg-between">
+            </div>
+            <footer class="footer footer-transparent">
+                <div class="container">
+                    <div class="row text-center align-items-center flex-row-reverse">
+                        <div class="col-lg-auto ml-lg-auto">
+                            <ul class="list-inline list-inline-dots mb-0">
+                                <li class="list-inline-item"><a href="./docs/index.html"
+                                        class="link-secondary">Documentation</a></li>
+                                <li class="list-inline-item"><a href="./faq.html" class="link-secondary">FAQ</a></li>
+                                <li class="list-inline-item"><a href="https://github.com/tabler/tabler" target="_blank"
+                                        class="link-secondary">Source code</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                            Copyright © 2020
+                            <a href="." class="link-secondary">Tabler</a>.
+                            All rights reserved.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New report</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" /></svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" name="example-text-input"
+                            placeholder="Your report name">
+                    </div>
+                    <label class="form-label">Report type</label>
+                    <div class="form-selectgroup-boxes row mb-3">
                         <div class="col-lg-6">
-                            <div class="copyright text-center  text-lg-left  text-muted">
-                                &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1"
-                                    target="_blank">Creative Tim</a>
+                            <label class="form-selectgroup-item">
+                                <input type="radio" name="report-type" value="1" class="form-selectgroup-input" checked>
+                                <span class="form-selectgroup-label d-flex align-items-center p-3">
+                                    <span class="mr-3">
+                                        <span class="form-selectgroup-check"></span>
+                                    </span>
+                                    <span class="form-selectgroup-label-content">
+                                        <span class="form-selectgroup-title strong mb-1">Simple</span>
+                                        <span class="d-block text-muted">Provide only basic data needed for the
+                                            report</span>
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="col-lg-6">
+                            <label class="form-selectgroup-item">
+                                <input type="radio" name="report-type" value="1" class="form-selectgroup-input">
+                                <span class="form-selectgroup-label d-flex align-items-center p-3">
+                                    <span class="mr-3">
+                                        <span class="form-selectgroup-check"></span>
+                                    </span>
+                                    <span class="form-selectgroup-label-content">
+                                        <span class="form-selectgroup-title strong mb-1">Advanced</span>
+                                        <span class="d-block text-muted">Insert charts and additional advanced analyses
+                                            to be inserted in
+                                            the report</span>
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="mb-3">
+                                <label class="form-label">Report url</label>
+                                <div class="input-group input-group-flat">
+                                    <span class="input-group-text">
+                                        https://tabler.io/reports/
+                                    </span>
+                                    <input type="text" class="form-control pl-0" value="report-01">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mb-3">
+                                <label class="form-label">Visibility</label>
+                                <select class="form-select">
+                                    <option value="1" selected>Private</option>
+                                    <option value="2">Public</option>
+                                    <option value="3">Hidden</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label">Client name</label>
+                                <input type="text" class="form-control">
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative
-                                        Tim</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://www.creative-tim.com/presentation" class="nav-link"
-                                        target="_blank">About
-                                        Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md"
-                                        class="nav-link" target="_blank">MIT License</a>
-                                </li>
-                            </ul>
+                            <div class="mb-3">
+                                <label class="form-label">Reporting period</label>
+                                <input type="date" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div>
+                                <label class="form-label">Additional information</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
                         </div>
                     </div>
-                </footer>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-link link-secondary" data-dismiss="modal">
+                        Cancel
+                    </a>
+                    <a href="#" class="btn btn-primary ml-auto" data-dismiss="modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" /></svg>
+                        Create new report
+                    </a>
+                </div>
             </div>
-
-
-
-
-
         </div>
-        <!-- Argon Scripts -->
-        <!-- Core -->
-        <script src="/static/vendor/jquery/dist/jquery.min.js"></script>
-        <script src="/static/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="/static/vendor/js-cookie/js.cookie.js"></script>
-        <script src="/static/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-        <script src="/static/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-        <!-- Optional JS -->
-        <script src="/static/vendor/chart.js/dist/Chart.min.js"></script>
-        <script src="/static/vendor/chart.js/dist/Chart.extension.js"></script>
-        <!-- Argon JS -->
-        <script src="/static/js/argon.js?v=1.2.0"></script>
-        <script src="/static/sim/charts/plotting.js"></script>
+    </div>
+    <!-- Libs JS -->
+    <script src="/static/dist/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/dist/libs/jquery/dist/jquery.slim.min.js"></script>
+    <!-- <script src="/static/dist/libs/apexcharts/dist/apexcharts.min.js"></script> -->
+    <script src="/static/dist/libs/chart.js/dist/Chart.min.js"></script>
+    <script src="/static/dist/libs/jqvmap/dist/jquery.vmap.min.js"></script>
+    <script src="/static/dist/libs/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="/static/dist/libs/peity/jquery.peity.min.js"></script>
+    <!-- Tabler Core -->
+    <script src="/static/dist/js/tabler.min.js"></script>
+    <script src="/static/sim/charts/plotting.js"></script>
 
-
-        <script>
-            $().ready(function () {
-                function ShowStage1(input1) {
-                    $('.stage1').css('display', 'initial');
-                    $(".stage1").animate({
-                        opacity: '100%',
-                        //left: "+=50",
-                        //height: "toggle"
-                    }, 1000, function () {
-                        Stage1_plot(input1[0], input1[1], input1[2]);
-                    });
-
-                }
-
-                function ShowStage2(input2) {
-                    $('.stage2').css('display', 'initial');
-                    $(".stage2").animate({
-                        opacity: '100%',
-                        //left: "+=50",
-                        //height: "toggle"
-                    }, 1000, function () {
-                        Stage2_plot(input2[0], input2[1], input2[3], input2[2]);
-                    });
-                }
-
-                function ShowStage3(input_x, input3) {
-                    $('.stage3').css('display', 'initial');
-                    $(".stage3").animate({
-                        opacity: '100%',
-                        //left: "+=50",
-                        //height: "toggle"
-                    }, 1000, function () {
-                        //console.log()
-                        Stage3_plot(input_x, input3[0], input3[1], input3[2], input3[3], input3[4]);
-                    });
-                }
-
-                function ajax_post(data) {
-                    $.ajax({
-                        method: "POST",
-                        url: "signal",
-                        dataType: "json",
-                        data: data
-                    })
-                        .done(function (input1) {
-                            //console.log(input1[1])
-                            ShowStage1(input1)
-                            $.ajax({
-                                method: "POST",
-                                url: "staticsim",
-                                dataType: "json",
-                            })
-                                .done(function (input2) {
-                                    //console.log(input2)
-                                    ShowStage2(input2)
-                                    $.ajax({
-                                        method: "POST",
-                                        url: "staticopt",
-                                        dataType: "json",
-                                    })
-                                        .done(function (input3) {
-                                            //console.log(input3[3])
-                                            ShowStage3(input1[0], input3)
-
-
-                                        });
-                                });
-
-
-
-
-
-
-
-
-
-
-                            // case 2:
-                            //     Stage2_plot(input[3], input[4], input[5], input[6]);
-                            //     break;
-                            //case 2:
-                            //Stage2_plot(input[3],input[4],input[5],input[6]);
-                            //}
-
-                            // //console.log(input[3])
-                            // // InputPlotting(stage, input[0], input[1], input[2], input[3], input[4], input[5], input[6], input[7]);
-                            // // console.log("Data Saved: " + input[3]);
-                            // ov_div(0)
-                        });
-
-                }
-
-                function ov_div(i) {
-                    if (i == 0) {
-                        $('.sim_overlay').css("display", "none");
-                    } else {
-                        $('.sim_overlay').css("display", "inline");
-                    }
-                }
-
-                $('#start_simulation').click(function () {
-
-                    //ov_div(1)
-                    var delta_t = $('#system_delta_t').val()
-                    var system_damping = $('#system_damping').val()
-                    var system_acc = $('#system_acc').val()
-                    var system_long = $('#system_long').val()
-                    var system_braking = $('#system_braking').val()
-                    console.log(delta_t)
-
-                    var stage = 1;
-                    var next_stage = true;
-
-                    data = {
-                        delta_t: delta_t,
-                        system_braking: system_braking,
-                        system_acc: system_acc,
-                        system_damping: system_damping,
-                        system_long: system_long
-                    }
-                    ajax_post(data)
-
-                    //console.log(stage)
-
+    <script>
+        (function () {
+            /**
+             * Input mask
+             */
+            var maskElementList = [].slice.call(document.querySelectorAll('[data-mask]'))
+            maskElementList.map(function (maskEl) {
+                return new IMask(maskEl, {
+                    mask: maskEl.dataset.mask,
+                    lazy: maskEl.dataset['mask-visible'] === 'true'
                 })
+            });
+        })();
+    </script>
+
+    <script>
+        document.body.style.display = "block"
+    </script>
+
+
+
+    <script>
+
+    </script>
+
+    <script>
+        var menu_shape_open = false;
+        $("#menu_shape_deploy").click(function () {
+
+            if (menu_shape_open == false) {
+                $("#wave_shape_menu").animate({
+                    //opacity: 0.25,
+                    width: "800",
+                    //height: "toggle"
+                }, 1000, function () {
+                    menu_shape_open = true
+                });
+            } else {
+                $("#wave_shape_menu").animate({
+                    //opacity: 0.25,
+                    width: "0",
+                    //height: "toggle"
+                }, 1000, function () {
+                    menu_shape_open = false
+                });
+            }
+
+        });
+
+    </script>
+
+    <script>
+
+
+        $(document).ready(function () {
+                $plotting = new Plotting();
+                $plotting.load_input_plot(true);
+            $('.tab-signals > li > a').click(function () {
+                var selected_tab = $(this).attr('accesskey');
+                var newChart = $('.fss' + selected_tab);
+
+
+                $plotting.load_input_plot(newChart);
+                //$plotting.load_input_plot(newChart);
+
+            });
+
+
+
+
+        })
+
+
+
+    </script>
+
+
+
+
+    <script>
+
+        $('.refreshbtn').click(function () {
+            var signal_params = [];
+            var signal_type = $('.tab-signals').find('.active').attr('accesskey');
+            var $selector = $('.fs' + signal_type);
+
+            $.each($selector.find('.mb-3 > input'), function (i, val) {
+                signal_params.push(parseFloat(val.value))
+            });
+            ajax_post_charting(signal_type, signal_params)
+        });
+
+
+        function ajax_post_charting(signal_type, data) {
+            $sig_data = { signal_type: signal_type, signal_data: JSON.stringify(data) };
+            $.ajax({
+                method: "POST",
+                url: "/simulator/signal",
+                dataType: "json",
+                data: $sig_data
             })
-        </script>
-
-        <script type="text/javascript">
-            $(document).ready(function () {
-                var $randomNumber = $('.nbr');
-                var $timer = 30;
-                var $it;
-                var $data = 0;
-                var index;
-                var change;
-                var letters = [">", ">", "C", "a", "l", "c", "u", "l", "a", "t", "i", "n", "g", ".", "."];
-
-                $randomNumber.each(function () {
-                    change = Math.round(Math.random() * 100);
-                    $(this).attr('data-change', change);
+                .done(function (result) {
+                    console.log(result)
+                    ShowStage1(result)
                 });
 
-                function random() {
-                    return Math.round(Math.random() * 9);
-                };
-
-                function select() {
-                    return Math.round(Math.random() * $randomNumber.length + 1);
-                };
-
-                function value() {
-                    $('.nbr:nth-child(' + select() + ')').html('' + random() + '');
-                    $('.nbr:nth-child(' + select() + ')').attr('data-number', $data);
-                    $data++;
-
-                    $randomNumber.each(function () {
-                        if (parseInt($(this).attr('data-number')) > parseInt($(this).attr('data-change'))) {
-                            index = $('.ltr').index(this);
-                            $(this).html(letters[index]);
-                            $(this).removeClass('nbr');
-                        }
-                    });
-                };
-                $it = setInterval(value, $timer);
-            });
-        </script>
+        }
 
 
+        function ShowStage1(input1) {
+            t = input1[0]
+            y = input1[1]
+            console.log(y)
+            // $('.stage1').css('display', 'initial');
+            // $(".stage1").animate({
+            //     opacity: '100%',
+            //     //left: "+=50",
+            //     //height: "toggle"
+            // }, 1000, function () {
+            $plotting.Stage1_plot(t, y);
+            // });
 
+        }
+    </script>
 
-
-
-
-
-
-        <script>
-            (function () {
-
-
-                var months = ["January", "February", "March", "April", "May", "June",
-                    "July", "August", "September", "October", "November", "December"
-                ],
-                    days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
-                function getTime() {
-
-                    var date = new Date(),
-                        second = 0,
-                        minute = date.getMinutes(),
-                        hour = date.getHours(),
-                        time = date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
-                        day = date.getDay(),
-                        month = date.getMonth(),
-                        date = date.getDate() + ' . ' + months[month],
-
-                        ds = second * -6,
-                        dm = minute * -6,
-                        dh = hour * -30;
-
-                    $('.second').css('transform', 'rotate(' + ds + 'deg)');
-                    $('.minute').css('transform', 'rotate(' + dm + 'deg)');
-                    $('.hour').css('transform', 'rotate(' + dh + 'deg)');
-
-                    $('.time').text(time);
-                    $('.day').text(days[day]);
-                    $('.date').text(date)
-                }
-
-                function dailer(selector, size) {
-                    for (var s = 0; s < 39; s++) {
-                        if (s > 20) {
-                            $(selector).append('<span style="transform: rotate(' + 9 * s + 'deg) translateX(' + size + 'px)">' + (-s) + '</span>')
-                        } else {
-                            $(selector).append('<span style="transform: rotate(' + (-9) * s + 'deg) translateX(' + size + 'px)">' + s + '</span>')
-
-                        }
-                    }
-
-                }
-
-                dailer('.second', 195);
-                dailer('.minute', 145);
-                dailer('.dail', 230);
-
-                for (var s = 1; s < 13; s++) {
-                    $('.hour').append('<span style="transform: rotate(' + 30 * s + 'deg) translateX(100px)">' + s + '</span>')
-                }
-
-
-                setInterval(getTime, 1000);
-                getTime();
-
-            }());
-
-        </script>
-    </body>
+</body>
 
 </html>
