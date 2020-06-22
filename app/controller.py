@@ -14,7 +14,7 @@ SAMPLES = 200
 class SimulatorController:
     def run(self,delta_t):
         self.SAMPLES = 200
-        self.SYSTEM_DELTA_T = delta_t
+        self.SYSTEM_DELTA_T = float(delta_t)
         self.system_acc = 0
         self.system_braking = 0
         self.system_damping = 0

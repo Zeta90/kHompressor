@@ -20,86 +20,92 @@ class Plotting {
 
     load_input_plot(newChart) {
         var charts = $('.fss');
-        $.each(charts, function(i, chrt){
+        $.each(charts, function (i, chrt) {
             console.log(chrt);
-            var ctx=chrt.getContext('2d');
+            var ctx = chrt.getContext('2d');
             ctx.clearRect(0, 0, chrt.width, chrt.height);
-        
+
         })
-        if(newChart == true){
+        if (newChart == true) {
             var system_x = $('.f_activ');
-        }else{
+        } else {
             var system_x = newChart;
         }
         this.system_x_chart = new Chart(system_x, {
             type: 'line',
-            zoom: {
-                enabled: true,
-                mode: 'xy',
+            data: {
+                labels: this.init_t,
+                datasets: [{
+                    label: 'Unfilled',
+                    borderWidth: 1,
+                    pointRadius: 0,
+                    fill: false,
+                    backgroundColor: 'blue',
+                    borderColor: 'blue',
+                    data: this.init_y,
+                }]
             },
             options: {
+                // responsive: true,
+                // title: {
+                // 	display: true,
+                // 	text: 'Chart.js Line Chart'
+                // },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                // hover: {
+                // 	mode: 'nearest',
+                // 	intersect: true
+                // },
                 scales: {
-                    pan: {
-                        enabled: true,
-                        mode: 'x',
-                        speed: 1
-                    },
+
                     yAxes: [{
                         display: true,
                         ticks: {
                             suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
                             beginAtZero: true   // minimum value will be 0.
+                        }, ticks: {
+                            // callback: function (value) {
+                            //     if (!(value % 2)) {
+                            //         console.log(value)
+                            //         return value;
+                            //     }
+                            // }
                         }
                     }],
-                    ticks: {
-                        callback: function (value) {
-                            if (!(value % 2)) {
-                                return value;
+                    xAxes: [{
+                        display: true,
+                        ticks: {
+                            suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                            beginAtZero: true   // minimum value will be 0.
+                        }, ticks: {
+                            callback: function (value) {
+                                if ((value) % 5) {
+                                    return value;
+                                }
                             }
                         }
-                    }
+                    }],
+
                 },
-                tooltips: {
-                    callbacks: {
-                        label: function (item, data) {
-                            var label = data.datasets[item.datasetIndex].label || '';
-                            var yLabel = item.yLabel;
-                            var content = '';
-
-                            if (data.datasets.length > 1) {
-                                content += '<span class="popover-body-label mr-auto">' + label + '</span>';
-                            }
-
-                            content += '<span class="popover-body-value">$' + yLabel + 'k</span>';
-                            return content;
-                        }
-                    }
-                }
-            },
-            data: {
-                labels: this.init_t,
-                datasets: [{
-                    label: 'Step input signal',
-                    data: this.init_y,
-                    label: 'Input',
-                    fill: true,
-                    lineTension: 0.1,
-                    backgroundColor: "transparent",
-                    borderColor: "rgba(75,192,192,1)",
-                    borderCapStyle: 'butt',
-                    borderDash: [],
-                    borderDashOffset: 0.0,
-                    borderJoinStyle: 'miter',
-                    pointBorderColor: "rgba(75,192,192,1)",
-                    pointBackgroundColor: "#fff",
-                    pointBorderWidth: 1,
-                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                    pointHoverBorderColor: "rgba(220,220,220,1)",
-                    pointHoverBorderWidth: 1,
-                    pointRadius: 1,
-                    pointHitRadius: 10,
-                }]
+                // scales: {
+                // 	xAxes: [{
+                // 		display: true,
+                // 		// scaleLabel: {
+                // 		// 	display: true,
+                // 		// 	labelString: 'Month'
+                // 		// }
+                // 	}],
+                // 	yAxes: [{
+                // 		display: true,
+                // 		// scaleLabel: {
+                // 		// 	display: true,
+                // 		// 	labelString: 'Value'
+                // 		// }
+                // 	}]
+                // }
             }
         });
         system_x.data('chart', this.system_x_chart);
@@ -114,11 +120,11 @@ class Plotting {
         this.system_x_chart.update();
 
         // this.system_x_chart.render();
-        console.log(this.system_x_chart.data.label)
+        console.log(y)
         // $system_x_chart.series.data = y
         // $system_x_chart.labels = t
         // $system_x_chart.render();
-        console.log(this.system_x_chart.data.datasets[0].data)
+        console.log(t)
 
 
 
