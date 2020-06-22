@@ -1,0 +1,906 @@
+<!--
+=========================================================
+* Argon Dashboard - v1.2.0
+=========================================================
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+
+
+* Copyright  Creative Tim (http://www.creative-tim.com)
+* Coded by www.creative-tim.com
+
+
+
+=========================================================
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+    <meta name="author" content="Creative Tim">
+    <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/static/img/brand/favicon.png" type="image/png">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <!-- Icons -->
+    <link rel="stylesheet" href="/static/vendor/nucleo/css/nucleo.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/compass/compass.css" type="text/css">
+    <link rel="stylesheet" href="/static/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+    <!-- Page plugins -->
+    <!-- Argon CSS -->
+    <link rel="stylesheet" href="/static/css/argon.css?v=1.2.0" type="text/css"> {% comment %}
+    <link rel="stylesheet" href="/static/css/loading.css" type="text/css"> {% endcomment %}
+</head>
+
+<body>
+    <div class='sim_overlay' style="
+    width: 100%;
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,1) 12%, rgba(173,173,173,0.39399509803921573) 100%);
+    height: 100%;
+    z-index: 99999999;
+    position: fixed;
+    display:none
+">
+        <div style=''>
+            <img src="/static/img/loading-opaque.gif" style='top: 35%;
+    left: 45%;
+    position: fixed;'>
+
+            <div class="content" style=''>
+                <div class="random" style='
+    position: fixed;
+    top: 60%;
+    left: 42%;
+    color: rebeccapurple;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 30px;
+    text-align-last: left;
+        
+
+    font-family: "Orbitron";
+    text-transform: uppercase;
+    
+
+    '>
+                    <span class="span nbr ltr">0</span>
+                    <span class="span nbr ltr">0</span>
+                    <span class="span nbr ltr">0</span>
+                    <span class="span nbr ltr">0</span>
+                    <span class="span nbr ltr">0</span>
+                    <span class="span nbr ltr">0</span>
+                    <span class="span nbr ltr">0</span>
+                    <span class="span nbr ltr">0</span>
+                    <span class="span nbr ltr">0</span>
+                    <span class="span nbr ltr">0</span>
+                    <span class="span nbr ltr">0</span>
+                    <span class="span nbr ltr">0</span>
+                    <span class="span nbr ltr">0</span>
+                    <span class="span nbr ltr">0</span>
+                    <span class="span nbr ltr">0</span>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-- Sidenav -->
+
+    <!-- Main content -->
+    <div class="main-content" id="panel">
+        <!-- Topnav -->
+
+        <!-- Header -->
+        <!-- Header -->
+        <div class="header bg-primary pb-6">
+            <div class="container-fluid">
+                <div class="header-body">
+                    <div class="row align-items-center py-4">
+                        <div class="col-lg-6 col-7">
+                            <h6 style='font-size: 50px;font-family:"Suez One" , "serif" '
+                                class="h2 text-white d-inline-block mb-0">khompressor</h6>
+                        </div>
+
+                    </div>
+                    <!-- Card stats !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+          
+          -->
+
+                </div>
+            </div>
+        </div>
+        <!-- Page content -->
+
+
+
+
+
+        <div class="container-fluid mt--6">
+            <div style=''>
+                <div class="row">
+                    <div class="col-xl-2"></div>
+                    <div class="col-xl-4">
+                        <div class="card">
+                            <div class="card-header border-0">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h3 class="mb-0">Simulation</h3>
+                                    </div>
+                                    <div class="col text-right">
+                                        <a href="javascript:void(0)" id='start_simulation'
+                                            class="btn btn-sm btn-primary">Start
+                                            simulation</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <!-- Projects table -->
+                                <table class="table align-items-center table-flush">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">Parameter</th>
+                                            <th scope="col">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">
+                                                Delta T
+                                            </th>
+                                            <td>
+
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <div class="form-group" style='margin-bottom:0'>
+                                                            <input type="text" id="system_delta_t" class="form-control"
+                                                                placeholder="Delta T" value="0.1">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                Mass height
+                                            </th>
+                                            <td>
+
+
+
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <div class="form-group" style='margin-bottom:0'>
+                                                            <input type="text" id="system_long" class="form-control"
+                                                                placeholder="Mass height" value="5">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                Damping (0 - x - 1)
+                                            </th>
+                                            <td>
+
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <div class="form-group" style='margin-bottom:0'>
+                                                            <input type="text" id="system_damping" class="form-control"
+                                                                placeholder="Damping" value="0.1">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                System Acceleration
+                                            </th>
+                                            <td>
+
+
+
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <div class="form-group" style='margin-bottom:0'>
+                                                            <input type="text" id="system_acc" class="form-control"
+                                                                placeholder="Acceleration" value="10">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                Braking Acceleration
+                                            </th>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <div class="form-group" style='margin-bottom:0'>
+                                                            <input type="text" id="system_braking" class="form-control"
+                                                                placeholder="Braking" value="5">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="card">
+                            <div class="card-header border-0">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h3 class="mb-0">Enviroment conditions</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <!-- Projects table -->
+                                <table class="table align-items-center table-flush">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">Parameter</th>
+                                            <th scope="col">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">
+                                                System Gain [k]
+                                                <div class="ttip">
+
+                                                    <div class='' style='    
+                                                        position: fixed;
+                                                     margin-top: -27px;
+                                                   /* margin-left: 100px; */
+                                                    font-size: 35px;
+                                                    font-family: "Suez One" , "serif";'>?</div>
+
+                                                    <div class="popup">
+                                                        <div class="row header">
+                                                            <span>System Gain</span>
+                                                        </div>
+                                                        <div class="row items">
+                                                            <span style='margin-right: 10px;
+                                                                margin-left: 5px;
+                                                                font-family: "Suez One" , "serif";
+                                                                font-size: 30px;
+                                                                color: green;
+                                                                margin-top: -7px;'>!</span>
+                                                            <span>It means the system compensation.</span>
+
+
+                                                        </div>
+                                                        <span style='font-size: 15px;
+                                                            margin-left: 15px;
+                                                            color: black;
+                                                            font-weight: 100;max-width: 350px;
+    white-space: normal;'>
+                                                            The relation between x (rail long. in meters) and l
+                                                            (massless cable long. in meters)
+                                                        </span>
+                                                        <div class="row checkout">
+                                                            <img src="/static/img/tooltip/system.png"></img>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--i cant use the BUTTON tag -->
+                                            </th>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <div class="form-group" style='margin-bottom:0'>
+                                                            <input type="text" id="system_acc" class="form-control"
+                                                                placeholder="Acceleration" value="10">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                Acceleration (m/s²)
+                                            </th>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <div class="form-group" style='margin-bottom:0'>
+                                                            <input type="text" id="system_acc" class="form-control"
+                                                                placeholder="Acceleration" value="10">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                Braking (m/s²)
+                                            </th>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <div class="form-group" style='margin-bottom:0'>
+                                                            <input type="text" id="system_acc" class="form-control"
+                                                                placeholder="Acceleration" value="10">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                Max System Velocity (m/s)
+                                            </th>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <div class="form-group" style='margin-bottom:0'>
+                                                            <input type="text" id="system_acc" class="form-control"
+                                                                placeholder="Acceleration" value="10">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                twitter
+                                            </th>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <div class="form-group" style='margin-bottom:0'>
+                                                            <input type="text" id="system_acc" class="form-control"
+                                                                placeholder="Acceleration" value="10">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2"></div>
+                </div>
+
+            </div>
+
+
+            <div class='stage1' style='opacity:0;display:none'>
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="card bg-default">
+                            <div class="card-header bg-transparent">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="text-light text-uppercase ls-1 mb-1">System</h6>
+                                        <h5 class="h3 text-white mb-0">Random Input</h5>
+                                    </div>
+                                    <div class="col">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Chart -->
+                                <div class="chart">
+                                    <!-- Chart wrapper -->
+                                    <canvas id="system_x" class="chart-canvas"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card bg-default">
+                            <div class="card-header bg-transparent">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="text-light text-uppercase ls-1 mb-1">System</h6>
+                                        <h5 class="h3 text-white mb-0">Velocity</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Chart -->
+                                <div class="chart">
+                                    <canvas id="system_velocity" class="chart-canvas"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='stage2' style='opacity:0%;display:none'>
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="card bg-default">
+                            <div class="card-header bg-transparent">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="text-light text-uppercase ls-1 mb-1">Static simulation</h6>
+                                        <h5 class="h3 text-white mb-0">Output</h5>
+                                    </div>
+                                    <div class="col">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Chart -->
+                                <div class="chart">
+                                    <!-- Chart wrapper -->
+                                    <canvas id="system_static_output" class="chart-canvas"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card bg-default">
+                            <div class="card-header bg-transparent">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="text-light text-uppercase ls-1 mb-1">Static simulation</h6>
+                                        <h5 class="h3 text-white mb-0">Frequency Spectrum</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Chart -->
+                                <div class="chart">
+                                    <canvas id="system_static_spectrum" class="chart-canvas"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='stage3' style='opacity:0%;display:none'>
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="card bg-default">
+                            <div class="card-header bg-transparent">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="text-light text-uppercase ls-1 mb-1">Static Optimal Spectrum</h6>
+                                        <h5 class="h3 text-white mb-0">Output</h5>
+                                    </div>
+                                    <div class="col">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Chart -->
+
+                                <div class="chart">
+                                    <!-- Chart wrapper -->
+                                    <canvas id="system_static_optimal_output" class="chart-canvas"></canvas>
+                                    <div id='timeline_1' style='height: 250px;
+                                    width: 1px;
+                                    position: absolute;
+                                    top: -15px;
+                                    left: 51px;
+                                    z-index: 99999;
+                                    
+                                    -webkit-filter: blur(2px);
+                                    -moz-filter: blur(2px);
+                                    -o-filter: blur(2px);
+                                    -ms-filter: blur(2px);
+                                    filter: blur(2px);
+                                    background-color: #17B200
+                                    
+                                    ;'></div>
+
+                                    <div id='timemarker_1' style='height: 8px;
+                                    border-radius: 50%;
+                                    width: 8px;
+                                    background-color: red;
+                                    position: absolute;
+                                    top: 325px;
+                                    left: 48px;
+                                    z-index: 99999
+                                
+                                    ;'></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="card bg-default">
+                            <div class="card-header bg-transparent">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="text-light text-uppercase ls-1 mb-1">Static simulation</h6>
+                                        <h5 class="h3 text-white mb-0">Frequency Spectrum</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Chart -->
+                                <div class="chart">
+                                    <canvas id="system_static_optimal_spectrum" class="chart-canvas"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4" style='background-color: #f8f9fe !important;'>
+                        <div class="car bg-default" style='background-color: #f8f9fe !important;'>
+                            <div class="card-header bg-transparent" style='border:0'>
+
+                            </div>
+                            <div class="card-body">
+                                <!-- Chart -->
+                                <div class="chart">
+                                    <div id="system_static_angle_deviation" class="chart-canvas"
+                                        style='margin-top:-60px'>
+                                        <!-- <div class="clock-container" style='  transform: rotate(-90deg);margin:auto'>
+                                            <div class="clock-digital" style='display: none;'>
+                                                <div class="date"></div>
+                                                <div class="time"></div>
+                                                <div class="day"> </div>
+                                            </div>
+                                            <div class="clock-analog">
+                                                <div class="spear"></div>
+                                                <div class="hour"></div>
+                                                <div class="minute"></div>
+                                                <div class="second"></div>
+                                                <div class="dail"></div>
+                                            </div>
+                                        </div> -->
+                                        <canvas class='angle_canvas'></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer pt-0">
+                <div class="row align-items-center justify-content-lg-between">
+                    <div class="col-lg-6">
+                        <div class="copyright text-center  text-lg-left  text-muted">
+                            &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1"
+                                target="_blank">Creative Tim</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                            <li class="nav-item">
+                                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative
+                                    Tim</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.creative-tim.com/presentation" class="nav-link"
+                                    target="_blank">About
+                                    Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md"
+                                    class="nav-link" target="_blank">MIT License</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+
+
+
+    </div>
+    <!-- Argon Scripts -->
+    <!-- Core -->
+    <script src="/static/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/vendor/js-cookie/js.cookie.js"></script>
+    <script src="/static/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="/static/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+    <!-- Optional JS -->
+    <script src="/static/vendor/chart.js/dist/Chart.min.js"></script>
+    <script src="/static/vendor/chart.js/dist/Chart.extension.js"></script>
+    <!-- Argon JS -->
+    <script src="/static/js/argon.js?v=1.2.0"></script>
+    <script src="/static/sim/charts/plotting.js"></script>
+
+
+    <script>
+        $().ready(function () {
+            function ShowStage1(input1) {
+                $('.stage1').css('display', 'initial');
+                $(".stage1").animate({
+                    opacity: '100%',
+                    //left: "+=50",
+                    //height: "toggle"
+                }, 1000, function () {
+                    Stage1_plot(input1[0], input1[1], input1[2]);
+                });
+
+            }
+
+            function ShowStage2(input2) {
+                $('.stage2').css('display', 'initial');
+                $(".stage2").animate({
+                    opacity: '100%',
+                    //left: "+=50",
+                    //height: "toggle"
+                }, 1000, function () {
+                    Stage2_plot(input2[0], input2[1], input2[3], input2[2]);
+                });
+            }
+
+            function ShowStage3(input_x, input3) {
+                $('.stage3').css('display', 'initial');
+                $(".stage3").animate({
+                    opacity: '100%',
+                    //left: "+=50",
+                    //height: "toggle"
+                }, 1000, function () {
+                    //console.log()
+                    Stage3_plot(input_x, input3[0], input3[1], input3[2], input3[3], input3[4]);
+                });
+            }
+
+            function ajax_post(data) {
+                $.ajax({
+                    method: "POST",
+                    url: "signal",
+                    dataType: "json",
+                    data: data
+                })
+                    .done(function (input1) {
+                        //console.log(input1[1])
+                        ShowStage1(input1)
+                        $.ajax({
+                            method: "POST",
+                            url: "staticsim",
+                            dataType: "json",
+                        })
+                            .done(function (input2) {
+                                //console.log(input2)
+                                ShowStage2(input2)
+                                $.ajax({
+                                    method: "POST",
+                                    url: "staticopt",
+                                    dataType: "json",
+                                })
+                                    .done(function (input3) {
+                                        //console.log(input3[3])
+                                        ShowStage3(input1[0], input3)
+
+
+                                    });
+                            });
+
+
+
+
+
+
+
+
+
+
+                        // case 2:
+                        //     Stage2_plot(input[3], input[4], input[5], input[6]);
+                        //     break;
+                        //case 2:
+                        //Stage2_plot(input[3],input[4],input[5],input[6]);
+                        //}
+
+                        // //console.log(input[3])
+                        // // InputPlotting(stage, input[0], input[1], input[2], input[3], input[4], input[5], input[6], input[7]);
+                        // // console.log("Data Saved: " + input[3]);
+                        // ov_div(0)
+                    });
+
+            }
+
+            function ov_div(i) {
+                if (i == 0) {
+                    $('.sim_overlay').css("display", "none");
+                } else {
+                    $('.sim_overlay').css("display", "inline");
+                }
+            }
+
+            $('#start_simulation').click(function () {
+
+                //ov_div(1)
+                var delta_t = $('#system_delta_t').val()
+                var system_damping = $('#system_damping').val()
+                var system_acc = $('#system_acc').val()
+                var system_long = $('#system_long').val()
+                var system_braking = $('#system_braking').val()
+                console.log(delta_t)
+
+                var stage = 1;
+                var next_stage = true;
+
+                data = {
+                    delta_t: delta_t,
+                    system_braking: system_braking,
+                    system_acc: system_acc,
+                    system_damping: system_damping,
+                    system_long: system_long
+                }
+                ajax_post(data)
+
+                //console.log(stage)
+
+            })
+        })
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var $randomNumber = $('.nbr');
+            var $timer = 30;
+            var $it;
+            var $data = 0;
+            var index;
+            var change;
+            var letters = [">", ">", "C", "a", "l", "c", "u", "l", "a", "t", "i", "n", "g", ".", "."];
+
+            $randomNumber.each(function () {
+                change = Math.round(Math.random() * 100);
+                $(this).attr('data-change', change);
+            });
+
+            function random() {
+                return Math.round(Math.random() * 9);
+            };
+
+            function select() {
+                return Math.round(Math.random() * $randomNumber.length + 1);
+            };
+
+            function value() {
+                $('.nbr:nth-child(' + select() + ')').html('' + random() + '');
+                $('.nbr:nth-child(' + select() + ')').attr('data-number', $data);
+                $data++;
+
+                $randomNumber.each(function () {
+                    if (parseInt($(this).attr('data-number')) > parseInt($(this).attr('data-change'))) {
+                        index = $('.ltr').index(this);
+                        $(this).html(letters[index]);
+                        $(this).removeClass('nbr');
+                    }
+                });
+            };
+            $it = setInterval(value, $timer);
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+    <script>
+        (function () {
+
+
+            var months = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ],
+                days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+
+                const canvas = document.querySelector('.angle_canvas');
+            const angle_canvas = canvas.getContext('2d');
+            const width = 440;
+            const height = 440;
+
+            angle_canvas.fillStyle = 'rgb(0, 0, 255)';
+            angle_canvas.fillRect(0, 0, width, height);
+
+            angle_canvas.beginPath();
+            angle_canvas.arc(100, 100, 40, 0, 2 * Math.PI);
+            angle_canvas.stroke();
+
+            function getTime() {
+
+                var date = new Date(),
+                    second = 0,
+                    minute = date.getMinutes(),
+                    hour = date.getHours(),
+                    time = date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
+                    day = date.getDay(),
+                    month = date.getMonth(),
+                    date = date.getDate() + ' . ' + months[month],
+
+                    ds = second * -6,
+                    dm = minute * -6,
+                    dh = hour * -30;
+
+                $('.second').css('transform', 'rotate(' + ds + 'deg)');
+                $('.minute').css('transform', 'rotate(' + dm + 'deg)');
+                $('.hour').css('transform', 'rotate(' + dh + 'deg)');
+
+                $('.time').text(time);
+                $('.day').text(days[day]);
+                $('.date').text(date)
+            }
+
+            function dailer(selector, size) {
+                for (var s = 0; s < 40; s++) {
+                    if (s > 20) {
+                        $(selector).append('<span style="transform: rotate(' + 9 * s + 'deg) translateX(' + size + 'px)">' + -(40 - s) + '</span>')
+                    } else {
+                        $(selector).append('<span style="transform: rotate(' + (9) * s + 'deg) translateX(' + size + 'px)">' + (s) + '</span>')
+
+                    }
+                }
+
+            }
+
+            dailer('.second', 195);
+            dailer('.minute', 145);
+            dailer('.dail', 230);
+
+            for (var s = 0; s < 39; s++) {
+                if (s < 20) {
+                    //$('.second').append('<span style="transform: rotate(' + 9 * s + 'deg) translateX(100px)">' + s + '</span>')
+                } else {
+                    //$('.second').append('<span style="transform: rotate(' + (-9) * s + 'deg) translateX(100px)">' + s + '</span>')
+
+                }
+            }
+
+
+            // setInterval(getTime, 1000);
+            // getTime();
+
+        }());
+
+    </script>
+</body>
+
+</html>

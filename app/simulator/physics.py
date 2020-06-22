@@ -5,16 +5,32 @@ class Physics:
     ACCELERATION_BRK = 0
     VELOCITY_MAX = 25
 
-    delta_t = 0
+    DELTA_T = 0
 
     #   trolley
     trolley_velocity = 0.0
     trolley_x = 0.0
 
-    def __init__(self, delta_t,acceleration,braking):
-        self.delta_t = delta_t
-        self.ACCELERATION_MOV = acceleration
-        self.ACCELERATION_BRK = braking
+    TIME_MULTIPLIER = 0
+
+    def __init__(self,delta_t,time_multiplier):
+        self.DELTA_T = delta_t
+        self.TIME_MULTIPLIER = time_multiplier
+
+    def step_v(self,t,y):
+        return (y/(self.DELTA_T * self.TIME_MULTIPLIER))
+
+    def step_a(self,t,v):
+        return (v/(self.DELTA_T * self.TIME_MULTIPLIER))
+
+    def square_v(self,t,y):
+        return (y/(self.DELTA_T * self.TIME_MULTIPLIER))
+
+    def square_a(self,t,v):
+        return (v/(self.DELTA_T * self.TIME_MULTIPLIER))
+
+
+
 
     def Right(self, n,dt):
         delta_t =  dt

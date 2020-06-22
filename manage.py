@@ -7,13 +7,16 @@ from django.core.wsgi import get_wsgi_application
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'khompressor.settings')
 
-    if os.environ.get('DJANGO_DEBUG', False):  # You can use django.conf settings.DEBUG
-        import ptvsd
-        ptvsd.enable_attach(address=('localhost', 8000))
-        ptvsd.wait_for_attach()  # We can remove this line it gives you trouble,
-                                # but it's good to know if the debugger started or not
-                                # blocking the execution for a while :-)
-        application = get_wsgi_application()
+    # start new section
+    from django.conf import settings
+
+    if settings.DEBUG:
+        if os.environ.get('RUN_MAIN') or os.environ.get('WERKZEUG_RUN_MAIN'):
+            import ptvsd
+
+            ptvsd.enable_attach(address=('localhost', 8000))
+            print('Attached!')
+    # end new section
 
     try:
         from django.core.management import execute_from_command_line
