@@ -6,7 +6,7 @@
 // gradientStroke.addColorStop(1, "green");
 
 
-class Plotting {
+class PlottingWaves {
     constructor() {
         this.system_x_chart;
         this.init_t = []
@@ -18,51 +18,41 @@ class Plotting {
         this.init_t.push(20);
     }//.toFixed(1)
 
-    load_input_plot(newChart) {
-        var charts = $('.fss');
-        $.each(charts, function (i, chrt) {
-            console.log(chrt);
-            var ctx = chrt.getContext('2d');
-            ctx.clearRect(0, 0, chrt.width, chrt.height);
-
-        })
-        if (newChart == true) {
-            var system_x = $('.f_activ');
-        } else {
-            var system_x = newChart;
-        }
+    load_input_plot() {
+        var system_x = $('#system_x')
         this.system_x_chart = new Chart(system_x, {
             type: 'line',
+
             data: {
                 labels: this.init_t,
                 datasets: [{
                     label: 'Unfilled',
-                    borderWidth: 1,
+                    borderWidth: 2,
                     pointRadius: 0,
                     fill: false,
-                    backgroundColor: 'blue',
-                    borderColor: 'blue',
+                    backgroundColor: 'yellow',
+                    borderColor: 'yellow',
                     data: this.init_y,
                 }]
             },
             options: {
+                legend: { display: false },
                 // responsive: true,
                 // title: {
                 // 	display: true,
                 // 	text: 'Chart.js Line Chart'
                 // },
-                tooltips: {
-                    mode: 'index',
-                    intersect: false,
-                },
+                // tooltips: {
+                //     mode: 'index',
+                //     intersect: false,
+                // },
                 // hover: {
                 // 	mode: 'nearest',
                 // 	intersect: true
                 // },
                 scales: {
-
                     yAxes: [{
-                        display: true,
+                        display: false,
                         ticks: {
                             suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
                             beginAtZero: true   // minimum value will be 0.
@@ -76,7 +66,7 @@ class Plotting {
                         }
                     }],
                     xAxes: [{
-                        display: true,
+                        display: false,
                         ticks: {
                             suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
                             beginAtZero: true   // minimum value will be 0.
@@ -90,6 +80,7 @@ class Plotting {
                     }],
 
                 },
+
                 // scales: {
                 // 	xAxes: [{
                 // 		display: true,
@@ -109,7 +100,7 @@ class Plotting {
             }
         });
         system_x.data('chart', this.system_x_chart);
-
+        $('#system_x').attr('style', 'height:280px !important;width:100% !important;margin-top:10px;')
     }
 
     Stage1_plot(t, y) {
