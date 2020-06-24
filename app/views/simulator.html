@@ -29,6 +29,7 @@
     <link href="/static/dist/libs/jqvmap/dist/jquery.vmap.min.jss" rel="stylesheet" />
     <link href="/static/dist/css/tabler.min.css" rel="stylesheet" />
     <link href="/static/dist/css/demo.min.css" rel="stylesheet" />
+    <link href="/static/wave_device/device/window/wave_controls/wave_controls.css" rel="stylesheet" />
 
     <link href="/static/waveshaper/waveshaper.css" rel="stylesheet" />
 
@@ -659,28 +660,12 @@
                             </svg>
                             <div class="fl-studio-envelope" style='width: auto !important;'>
                                 <div class="fl-studio-envelope__visualizer" style='height: 300px;'>
-                                    <svg style='display: none;' class="envelope-visualizer" viewBox="0 0 300 100"
-                                        preserveAspectRatio="xMinYMid slice">
-                                        <path class="envelope-shape" d="M0,100L0,0" fill="transparent" stroke="#4eccff"
-                                            stroke-width="2"></path>
-                                        <circle class="delay" cx="0" cy="100" r="6" fill="#284554" stroke="#4eccff"
-                                            stroke-width="2">
-                                        </circle>
-                                        <circle class="attack" cx="0" cy="0" r="6" fill="#284554" stroke="#4eccff"
-                                            stroke-width="2">
-                                        </circle>
-                                        <circle class="hold" cx="0" cy="0" r="6" fill="#284554" stroke="#4eccff"
-                                            stroke-width="2"></circle>
-                                        <circle class="decay" cx="0" cy="100" r="6" fill="#284554" stroke="#4eccff"
-                                            stroke-width="2">
-                                        </circle>
-                                        <circle class="release" cx="0" cy="100" r="6" fill="#284554" stroke="#4eccff"
-                                            stroke-width="2">
-                                        </circle>
+                                    <svg class="envelope-visualizer">
+
                                     </svg>
 
                                     <div>
-                                        <canvas style="" class="fss fss2" id="system_x"></canvas>
+                                        <!-- <canvas style="" class="fss fss2" id="system_x"></canvas> -->
                                     </div>
                                 </div>
 
@@ -773,21 +758,23 @@
                                         <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
                                             <a href="#" class="btn btn-dark btn-block"
                                                 style='background-color: #8b8e90c7;'>
-                                                <img class='wave_btn' accesskey='1' href='javascript:void(0)'
-                                                    src="/static/img/waves/square.png" style='width: 48px;' />
-                                            </a>
-                                        </div>
-                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
-                                            <a href="#" class="btn btn-dark btn-block"
-                                                style='background-color: #8b8e90c7;'>
-                                                <img class='wave_btn' accesskey='3' src="/static/img/waves/saw.png"
+                                                <img class='selectwave_btn active' accesskey='0'
+                                                    href='javascript:void(0)' src="/static/img/waves/square.png"
                                                     style='width: 48px;' />
                                             </a>
                                         </div>
                                         <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
                                             <a href="#" class="btn btn-dark btn-block"
                                                 style='background-color: #8b8e90c7;'>
-                                                <img src="/static/img/waves/sine.png" style='width: 48px;' />
+                                                <img class='selectwave_btn' accesskey='1'
+                                                    src="/static/img/waves/saw.png" style='width: 48px;' />
+                                            </a>
+                                        </div>
+                                        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
+                                            <a href="#" class="btn btn-dark btn-block"
+                                                style='background-color: #8b8e90c7;'>
+                                                <img class='selectwave_btn' src="/static/img/waves/sine.png"
+                                                    style='width: 48px;' />
                                             </a>
                                         </div>
                                         <div class="col-6 col-sm-4 col-md-2 col-xl mb-3">
@@ -821,216 +808,461 @@
                                             </a>
                                         </div>
                                         <div class="wrapper">
-                                            <div class="button">home</div>
-                                            <div class="button">portofolio</div>
+                                            <div class="button btn_wave">Wave</div>
+                                            <div class="button">Simulate</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class='main_shaper'>
-                                    <div style='' class="fl-studio-envelope__controls">
+                                <div class='main_shaper' style='margin-top:20px'>
+                                    <div class="card-body" style='background-image: -webkit-linear-gradient(bottom, #161616 0%, #a1a4a700 100%);
+                                    margin-bottom: 10px;border-radius: 10px;   margin-top: -25px;'>
+                                        <div class="row">
+
+                                            <div class="col-md-6 col-xl-12">
+                                                <div class="fl-studio-envelope__controls" style=padding-top:0px;margin-bottom:10px>
+                                                    <div class="fl-studio-envelope__control envelope-knob_shapes">
+                                                        <div accesskey="0"
+                                                            class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes delay">
+                                                            <svg class="knob-input__visual" viewBox="0 0 40 40">
+                                                                <circle class="focus-indicator" cx="20" cy="20" r="18"
+                                                                    fill="#4eccff" filter="url(#glow)">
+                                                                </circle>
+                                                                <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
+                                                                    fill="#353b3f" stroke="#23292d"></circle>
+                                                                <path class="indicator-ring" d="M20,20Z" fill="#4eccff">
+                                                                </path>
+                                                                <g class="dial">
+                                                                    <circle cx="20" cy="20" r="16"
+                                                                        fill="url(#grad-dial-soft-shadow)">
+                                                                    </circle>
+                                                                    <ellipse cx="20" cy="22" rx="14" ry="14.5"
+                                                                        fill="#242a2e" opacity="0.15"></ellipse>
+                                                                    <circle cx="20" cy="20" r="14"
+                                                                        fill="url(#grad-dial-base)" stroke="#242a2e"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle cx="20" cy="20" r="13" fill="transparent"
+                                                                        stroke="url(#grad-dial-highlight)"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle class="dial-highlight" cx="20" cy="20"
+                                                                        r="14" fill="#ffffff"></circle>
+                                                                    <circle class="indicator-dot" cx="20" cy="30"
+                                                                        r="1.5" fill="#4eccff"></circle>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="fl-studio-envelope__label">delay</div>
+                                                    </div>
+                                                    <div class="fl-studio-envelope__control">
+                                                        <div accesskey="1"
+                                                            class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes attack">
+                                                            <svg class="knob-input__visual" viewBox="0 0 40 40">
+                                                                <circle class="focus-indicator" cx="20" cy="20" r="18"
+                                                                    fill="#4eccff" filter="url(#glow)">
+                                                                </circle>
+                                                                <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
+                                                                    fill="#353b3f" stroke="#23292d"></circle>
+                                                                <path class="indicator-ring" d="M20,20Z" fill="#4eccff">
+                                                                </path>
+                                                                <g class="dial">
+                                                                    <circle cx="20" cy="20" r="16"
+                                                                        fill="url(#grad-dial-soft-shadow)">
+                                                                    </circle>
+                                                                    <ellipse cx="20" cy="22" rx="14" ry="14.5"
+                                                                        fill="#242a2e" opacity="0.15"></ellipse>
+                                                                    <circle cx="20" cy="20" r="14"
+                                                                        fill="url(#grad-dial-base)" stroke="#242a2e"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle cx="20" cy="20" r="13" fill="transparent"
+                                                                        stroke="url(#grad-dial-highlight)"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle class="dial-highlight" cx="20" cy="20"
+                                                                        r="14" fill="#ffffff"></circle>
+                                                                    <circle class="indicator-dot" cx="20" cy="30"
+                                                                        r="1.5" fill="#4eccff"></circle>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="fl-studio-envelope__label">att</div>
+                                                    </div>
+                                                    <div class="fl-studio-envelope__control">
+                                                        <div accesskey="2"
+                                                            class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes hold">
+                                                            <svg class="knob-input__visual" viewBox="0 0 40 40">
+                                                                <circle class="focus-indicator" cx="20" cy="20" r="18"
+                                                                    fill="#4eccff" filter="url(#glow)">
+                                                                </circle>
+                                                                <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
+                                                                    fill="#353b3f" stroke="#23292d"></circle>
+                                                                <path class="indicator-ring" d="M20,20Z" fill="#4eccff">
+                                                                </path>
+                                                                <g class="dial">
+                                                                    <circle cx="20" cy="20" r="16"
+                                                                        fill="url(#grad-dial-soft-shadow)">
+                                                                    </circle>
+                                                                    <ellipse cx="20" cy="22" rx="14" ry="14.5"
+                                                                        fill="#242a2e" opacity="0.15"></ellipse>
+                                                                    <circle cx="20" cy="20" r="14"
+                                                                        fill="url(#grad-dial-base)" stroke="#242a2e"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle cx="20" cy="20" r="13" fill="transparent"
+                                                                        stroke="url(#grad-dial-highlight)"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle class="dial-highlight" cx="20" cy="20"
+                                                                        r="14" fill="#ffffff"></circle>
+                                                                    <circle class="indicator-dot" cx="20" cy="30"
+                                                                        r="1.5" fill="#4eccff"></circle>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="fl-studio-envelope__label">hold</div>
+                                                    </div>
+                                                    <div class="fl-studio-envelope__control">
+                                                        <div accesskey="3"
+                                                            class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes decay">
+                                                            <svg class="knob-input__visual" viewBox="0 0 40 40">
+                                                                <circle class="focus-indicator" cx="20" cy="20" r="18"
+                                                                    fill="#4eccff" filter="url(#glow)">
+                                                                </circle>
+                                                                <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
+                                                                    fill="#353b3f" stroke="#23292d"></circle>
+                                                                <path class="indicator-ring" d="M20,20Z" fill="#4eccff">
+                                                                </path>
+                                                                <g class="dial">
+                                                                    <circle cx="20" cy="20" r="16"
+                                                                        fill="url(#grad-dial-soft-shadow)">
+                                                                    </circle>
+                                                                    <ellipse cx="20" cy="22" rx="14" ry="14.5"
+                                                                        fill="#242a2e" opacity="0.15"></ellipse>
+                                                                    <circle cx="20" cy="20" r="14"
+                                                                        fill="url(#grad-dial-base)" stroke="#242a2e"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle cx="20" cy="20" r="13" fill="transparent"
+                                                                        stroke="url(#grad-dial-highlight)"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle class="dial-highlight" cx="20" cy="20"
+                                                                        r="14" fill="#ffffff"></circle>
+                                                                    <circle class="indicator-dot" cx="20" cy="30"
+                                                                        r="1.5" fill="#4eccff"></circle>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="fl-studio-envelope__label">dec</div>
+                                                    </div>
+                                                    <div class="fl-studio-envelope__control">
+                                                        <div accesskey="4"
+                                                            class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes sustain">
+                                                            <svg class="knob-input__visual" viewBox="0 0 40 40">
+                                                                <circle class="focus-indicator" cx="20" cy="20" r="18"
+                                                                    fill="#4eccff" filter="url(#glow)">
+                                                                </circle>
+                                                                <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
+                                                                    fill="#353b3f" stroke="#23292d"></circle>
+                                                                <path class="indicator-ring" d="M20,20Z" fill="#4eccff">
+                                                                </path>
+                                                                <g class="dial">
+                                                                    <circle cx="20" cy="20" r="16"
+                                                                        fill="url(#grad-dial-soft-shadow)">
+                                                                    </circle>
+                                                                    <ellipse cx="20" cy="22" rx="14" ry="14.5"
+                                                                        fill="#242a2e" opacity="0.15"></ellipse>
+                                                                    <circle cx="20" cy="20" r="14"
+                                                                        fill="url(#grad-dial-base)" stroke="#242a2e"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle cx="20" cy="20" r="13" fill="transparent"
+                                                                        stroke="url(#grad-dial-highlight)"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle class="dial-highlight" cx="20" cy="20"
+                                                                        r="14" fill="#ffffff"></circle>
+                                                                    <circle class="indicator-dot" cx="20" cy="30"
+                                                                        r="1.5" fill="#4eccff"></circle>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="fl-studio-envelope__label">sus</div>
+                                                    </div>
+                                                    <div class="fl-studio-envelope__control">
+                                                        <div accesskey="5"
+                                                            class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes release">
+                                                            <svg class="knob-input__visual" viewBox="0 0 40 40">
+                                                                <circle class="focus-indicator" cx="20" cy="20" r="18"
+                                                                    fill="#4eccff" filter="url(#glow)">
+                                                                </circle>
+                                                                <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
+                                                                    fill="#353b3f" stroke="#23292d"></circle>
+                                                                <path class="indicator-ring" d="M20,20Z" fill="#4eccff">
+                                                                </path>
+                                                                <g class="dial">
+                                                                    <circle cx="20" cy="20" r="16"
+                                                                        fill="url(#grad-dial-soft-shadow)">
+                                                                    </circle>
+                                                                    <ellipse cx="20" cy="22" rx="14" ry="14.5"
+                                                                        fill="#242a2e" opacity="0.15"></ellipse>
+                                                                    <circle cx="20" cy="20" r="14"
+                                                                        fill="url(#grad-dial-base)" stroke="#242a2e"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle cx="20" cy="20" r="13" fill="transparent"
+                                                                        stroke="url(#grad-dial-highlight)"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle class="dial-highlight" cx="20" cy="20"
+                                                                        r="14" fill="#ffffff"></circle>
+                                                                    <circle class="indicator-dot" cx="20" cy="30"
+                                                                        r="1.5" fill="#4eccff"></circle>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="fl-studio-envelope__label">rel</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="" style='   position:absolute;display: none; '>
+                                                <span class="toggle">
+                                                    <input type="checkbox">
+                                                    <label data-off="symetric" data-on="free"></label>
+                                                </span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row" style='    margin-top: -25px;'>
+                                            <div class="col-md-6 col-xl-9">
+                                                <div style='' class="fl-studio-envelope__controls">
+                                                    <ul class='glow' style='display: none;'>
+                                                        <li><a class="leads_wave" href="#"><i class="fa fa-arrows"
+                                                                    aria-hidden="true"></i></a></li>
+                                                        <li><a class="leads_wave" href="#"><i class="fa fa-arrows"
+                                                                    aria-hidden="true"></i></a></li>
+                                                        <li><a class="leads_wave" href="#"><i class="fa fa-arrows"
+                                                                    aria-hidden="true"></i></a></li>
+                                                        <li><a class="leads_wave" href="#"><i class="fa fa-arrows"
+                                                                    aria-hidden="true"></i></a></li>
+                                                        <li><a class="leads_wave" href="#"><i class="fa fa-arrows"
+                                                                    aria-hidden="true"></i></a></li>
+                                                        <li><a class="leads_wave" href="#"><i class="fa fa-arrows"
+                                                                    aria-hidden="true"></i></a></li>
+                                                    </ul>
 
 
-                                        <ul class='glow'>
-                                            <li><a class="leads_wave" href="#"><i class="fa fa-arrows"
-                                                        aria-hidden="true"></i></a></li>
-                                            <li><a class="leads_wave" href="#"><i class="fa fa-arrows"
-                                                        aria-hidden="true"></i></a></li>
-                                            <li><a class="leads_wave" href="#"><i class="fa fa-arrows"
-                                                        aria-hidden="true"></i></a></li>
-                                            <li><a class="leads_wave" href="#"><i class="fa fa-arrows"
-                                                        aria-hidden="true"></i></a></li>
-                                            <li><a class="leads_wave" href="#"><i class="fa fa-arrows"
-                                                        aria-hidden="true"></i></a></li>
-                                            <li><a class="leads_wave" href="#"><i class="fa fa-arrows"
-                                                        aria-hidden="true"></i></a></li>
-                                        </ul>
 
 
-                                        <div class="fl-studio-envelope__control envelope-knob_shapes">
-                                            <div accesskey="0"
-                                                class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes delay">
-                                                <svg class="knob-input__visual" viewBox="0 0 40 40">
-                                                    <circle class="focus-indicator" cx="20" cy="20" r="18"
-                                                        fill="#4eccff" filter="url(#glow)">
-                                                    </circle>
-                                                    <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
-                                                        fill="#353b3f" stroke="#23292d"></circle>
-                                                    <path class="indicator-ring" d="M20,20Z" fill="#4eccff"></path>
-                                                    <g class="dial">
-                                                        <circle cx="20" cy="20" r="16"
-                                                            fill="url(#grad-dial-soft-shadow)">
-                                                        </circle>
-                                                        <ellipse cx="20" cy="22" rx="14" ry="14.5" fill="#242a2e"
-                                                            opacity="0.15"></ellipse>
-                                                        <circle cx="20" cy="20" r="14" fill="url(#grad-dial-base)"
-                                                            stroke="#242a2e" stroke-width="1.5">
-                                                        </circle>
-                                                        <circle cx="20" cy="20" r="13" fill="transparent"
-                                                            stroke="url(#grad-dial-highlight)" stroke-width="1.5">
-                                                        </circle>
-                                                        <circle class="dial-highlight" cx="20" cy="20" r="14"
-                                                            fill="#ffffff"></circle>
-                                                        <circle class="indicator-dot" cx="20" cy="30" r="1.5"
-                                                            fill="#4eccff"></circle>
-                                                    </g>
-                                                </svg>
+                                                    <div class="fl-studio-envelope__control envelope-knob_shapes">
+                                                        <div accesskey="0"
+                                                            class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes delay">
+                                                            <svg class="knob-input__visual" viewBox="0 0 40 40">
+                                                                <circle class="focus-indicator" cx="20" cy="20" r="18"
+                                                                    fill="#4eccff" filter="url(#glow)">
+                                                                </circle>
+                                                                <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
+                                                                    fill="#353b3f" stroke="#23292d"></circle>
+                                                                <path class="indicator-ring" d="M20,20Z" fill="#4eccff">
+                                                                </path>
+                                                                <g class="dial">
+                                                                    <circle cx="20" cy="20" r="16"
+                                                                        fill="url(#grad-dial-soft-shadow)">
+                                                                    </circle>
+                                                                    <ellipse cx="20" cy="22" rx="14" ry="14.5"
+                                                                        fill="#242a2e" opacity="0.15"></ellipse>
+                                                                    <circle cx="20" cy="20" r="14"
+                                                                        fill="url(#grad-dial-base)" stroke="#242a2e"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle cx="20" cy="20" r="13" fill="transparent"
+                                                                        stroke="url(#grad-dial-highlight)"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle class="dial-highlight" cx="20" cy="20"
+                                                                        r="14" fill="#ffffff"></circle>
+                                                                    <circle class="indicator-dot" cx="20" cy="30"
+                                                                        r="1.5" fill="#4eccff"></circle>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="fl-studio-envelope__label">delay</div>
+                                                    </div>
+                                                    <div class="fl-studio-envelope__control">
+                                                        <div accesskey="1"
+                                                            class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes attack">
+                                                            <svg class="knob-input__visual" viewBox="0 0 40 40">
+                                                                <circle class="focus-indicator" cx="20" cy="20" r="18"
+                                                                    fill="#4eccff" filter="url(#glow)">
+                                                                </circle>
+                                                                <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
+                                                                    fill="#353b3f" stroke="#23292d"></circle>
+                                                                <path class="indicator-ring" d="M20,20Z" fill="#4eccff">
+                                                                </path>
+                                                                <g class="dial">
+                                                                    <circle cx="20" cy="20" r="16"
+                                                                        fill="url(#grad-dial-soft-shadow)">
+                                                                    </circle>
+                                                                    <ellipse cx="20" cy="22" rx="14" ry="14.5"
+                                                                        fill="#242a2e" opacity="0.15"></ellipse>
+                                                                    <circle cx="20" cy="20" r="14"
+                                                                        fill="url(#grad-dial-base)" stroke="#242a2e"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle cx="20" cy="20" r="13" fill="transparent"
+                                                                        stroke="url(#grad-dial-highlight)"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle class="dial-highlight" cx="20" cy="20"
+                                                                        r="14" fill="#ffffff"></circle>
+                                                                    <circle class="indicator-dot" cx="20" cy="30"
+                                                                        r="1.5" fill="#4eccff"></circle>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="fl-studio-envelope__label">att</div>
+                                                    </div>
+                                                    <div class="fl-studio-envelope__control">
+                                                        <div accesskey="2"
+                                                            class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes hold">
+                                                            <svg class="knob-input__visual" viewBox="0 0 40 40">
+                                                                <circle class="focus-indicator" cx="20" cy="20" r="18"
+                                                                    fill="#4eccff" filter="url(#glow)">
+                                                                </circle>
+                                                                <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
+                                                                    fill="#353b3f" stroke="#23292d"></circle>
+                                                                <path class="indicator-ring" d="M20,20Z" fill="#4eccff">
+                                                                </path>
+                                                                <g class="dial">
+                                                                    <circle cx="20" cy="20" r="16"
+                                                                        fill="url(#grad-dial-soft-shadow)">
+                                                                    </circle>
+                                                                    <ellipse cx="20" cy="22" rx="14" ry="14.5"
+                                                                        fill="#242a2e" opacity="0.15"></ellipse>
+                                                                    <circle cx="20" cy="20" r="14"
+                                                                        fill="url(#grad-dial-base)" stroke="#242a2e"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle cx="20" cy="20" r="13" fill="transparent"
+                                                                        stroke="url(#grad-dial-highlight)"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle class="dial-highlight" cx="20" cy="20"
+                                                                        r="14" fill="#ffffff"></circle>
+                                                                    <circle class="indicator-dot" cx="20" cy="30"
+                                                                        r="1.5" fill="#4eccff"></circle>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="fl-studio-envelope__label">hold</div>
+                                                    </div>
+                                                    <div class="fl-studio-envelope__control">
+                                                        <div accesskey="3"
+                                                            class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes decay">
+                                                            <svg class="knob-input__visual" viewBox="0 0 40 40">
+                                                                <circle class="focus-indicator" cx="20" cy="20" r="18"
+                                                                    fill="#4eccff" filter="url(#glow)">
+                                                                </circle>
+                                                                <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
+                                                                    fill="#353b3f" stroke="#23292d"></circle>
+                                                                <path class="indicator-ring" d="M20,20Z" fill="#4eccff">
+                                                                </path>
+                                                                <g class="dial">
+                                                                    <circle cx="20" cy="20" r="16"
+                                                                        fill="url(#grad-dial-soft-shadow)">
+                                                                    </circle>
+                                                                    <ellipse cx="20" cy="22" rx="14" ry="14.5"
+                                                                        fill="#242a2e" opacity="0.15"></ellipse>
+                                                                    <circle cx="20" cy="20" r="14"
+                                                                        fill="url(#grad-dial-base)" stroke="#242a2e"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle cx="20" cy="20" r="13" fill="transparent"
+                                                                        stroke="url(#grad-dial-highlight)"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle class="dial-highlight" cx="20" cy="20"
+                                                                        r="14" fill="#ffffff"></circle>
+                                                                    <circle class="indicator-dot" cx="20" cy="30"
+                                                                        r="1.5" fill="#4eccff"></circle>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="fl-studio-envelope__label">dec</div>
+                                                    </div>
+                                                    <div class="fl-studio-envelope__control">
+                                                        <div accesskey="4"
+                                                            class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes sustain">
+                                                            <svg class="knob-input__visual" viewBox="0 0 40 40">
+                                                                <circle class="focus-indicator" cx="20" cy="20" r="18"
+                                                                    fill="#4eccff" filter="url(#glow)">
+                                                                </circle>
+                                                                <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
+                                                                    fill="#353b3f" stroke="#23292d"></circle>
+                                                                <path class="indicator-ring" d="M20,20Z" fill="#4eccff">
+                                                                </path>
+                                                                <g class="dial">
+                                                                    <circle cx="20" cy="20" r="16"
+                                                                        fill="url(#grad-dial-soft-shadow)">
+                                                                    </circle>
+                                                                    <ellipse cx="20" cy="22" rx="14" ry="14.5"
+                                                                        fill="#242a2e" opacity="0.15"></ellipse>
+                                                                    <circle cx="20" cy="20" r="14"
+                                                                        fill="url(#grad-dial-base)" stroke="#242a2e"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle cx="20" cy="20" r="13" fill="transparent"
+                                                                        stroke="url(#grad-dial-highlight)"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle class="dial-highlight" cx="20" cy="20"
+                                                                        r="14" fill="#ffffff"></circle>
+                                                                    <circle class="indicator-dot" cx="20" cy="30"
+                                                                        r="1.5" fill="#4eccff"></circle>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="fl-studio-envelope__label">sus</div>
+                                                    </div>
+                                                    <div class="fl-studio-envelope__control">
+                                                        <div accesskey="5"
+                                                            class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes release">
+                                                            <svg class="knob-input__visual" viewBox="0 0 40 40">
+                                                                <circle class="focus-indicator" cx="20" cy="20" r="18"
+                                                                    fill="#4eccff" filter="url(#glow)">
+                                                                </circle>
+                                                                <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
+                                                                    fill="#353b3f" stroke="#23292d"></circle>
+                                                                <path class="indicator-ring" d="M20,20Z" fill="#4eccff">
+                                                                </path>
+                                                                <g class="dial">
+                                                                    <circle cx="20" cy="20" r="16"
+                                                                        fill="url(#grad-dial-soft-shadow)">
+                                                                    </circle>
+                                                                    <ellipse cx="20" cy="22" rx="14" ry="14.5"
+                                                                        fill="#242a2e" opacity="0.15"></ellipse>
+                                                                    <circle cx="20" cy="20" r="14"
+                                                                        fill="url(#grad-dial-base)" stroke="#242a2e"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle cx="20" cy="20" r="13" fill="transparent"
+                                                                        stroke="url(#grad-dial-highlight)"
+                                                                        stroke-width="1.5">
+                                                                    </circle>
+                                                                    <circle class="dial-highlight" cx="20" cy="20"
+                                                                        r="14" fill="#ffffff"></circle>
+                                                                    <circle class="indicator-dot" cx="20" cy="30"
+                                                                        r="1.5" fill="#4eccff"></circle>
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="fl-studio-envelope__label">rel</div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="fl-studio-envelope__label">delay</div>
-                                        </div>
-                                        <div class="fl-studio-envelope__control">
-                                            <div accesskey="1"
-                                                class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes attack">
-                                                <svg class="knob-input__visual" viewBox="0 0 40 40">
-                                                    <circle class="focus-indicator" cx="20" cy="20" r="18"
-                                                        fill="#4eccff" filter="url(#glow)">
-                                                    </circle>
-                                                    <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
-                                                        fill="#353b3f" stroke="#23292d"></circle>
-                                                    <path class="indicator-ring" d="M20,20Z" fill="#4eccff"></path>
-                                                    <g class="dial">
-                                                        <circle cx="20" cy="20" r="16"
-                                                            fill="url(#grad-dial-soft-shadow)">
-                                                        </circle>
-                                                        <ellipse cx="20" cy="22" rx="14" ry="14.5" fill="#242a2e"
-                                                            opacity="0.15"></ellipse>
-                                                        <circle cx="20" cy="20" r="14" fill="url(#grad-dial-base)"
-                                                            stroke="#242a2e" stroke-width="1.5">
-                                                        </circle>
-                                                        <circle cx="20" cy="20" r="13" fill="transparent"
-                                                            stroke="url(#grad-dial-highlight)" stroke-width="1.5">
-                                                        </circle>
-                                                        <circle class="dial-highlight" cx="20" cy="20" r="14"
-                                                            fill="#ffffff"></circle>
-                                                        <circle class="indicator-dot" cx="20" cy="30" r="1.5"
-                                                            fill="#4eccff"></circle>
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                            <div class="fl-studio-envelope__label">att</div>
-                                        </div>
-                                        <div class="fl-studio-envelope__control">
-                                            <div accesskey="2"
-                                                class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes hold">
-                                                <svg class="knob-input__visual" viewBox="0 0 40 40">
-                                                    <circle class="focus-indicator" cx="20" cy="20" r="18"
-                                                        fill="#4eccff" filter="url(#glow)">
-                                                    </circle>
-                                                    <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
-                                                        fill="#353b3f" stroke="#23292d"></circle>
-                                                    <path class="indicator-ring" d="M20,20Z" fill="#4eccff"></path>
-                                                    <g class="dial">
-                                                        <circle cx="20" cy="20" r="16"
-                                                            fill="url(#grad-dial-soft-shadow)">
-                                                        </circle>
-                                                        <ellipse cx="20" cy="22" rx="14" ry="14.5" fill="#242a2e"
-                                                            opacity="0.15"></ellipse>
-                                                        <circle cx="20" cy="20" r="14" fill="url(#grad-dial-base)"
-                                                            stroke="#242a2e" stroke-width="1.5">
-                                                        </circle>
-                                                        <circle cx="20" cy="20" r="13" fill="transparent"
-                                                            stroke="url(#grad-dial-highlight)" stroke-width="1.5">
-                                                        </circle>
-                                                        <circle class="dial-highlight" cx="20" cy="20" r="14"
-                                                            fill="#ffffff"></circle>
-                                                        <circle class="indicator-dot" cx="20" cy="30" r="1.5"
-                                                            fill="#4eccff"></circle>
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                            <div class="fl-studio-envelope__label">hold</div>
-                                        </div>
-                                        <div class="fl-studio-envelope__control">
-                                            <div accesskey="3"
-                                                class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes decay">
-                                                <svg class="knob-input__visual" viewBox="0 0 40 40">
-                                                    <circle class="focus-indicator" cx="20" cy="20" r="18"
-                                                        fill="#4eccff" filter="url(#glow)">
-                                                    </circle>
-                                                    <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
-                                                        fill="#353b3f" stroke="#23292d"></circle>
-                                                    <path class="indicator-ring" d="M20,20Z" fill="#4eccff"></path>
-                                                    <g class="dial">
-                                                        <circle cx="20" cy="20" r="16"
-                                                            fill="url(#grad-dial-soft-shadow)">
-                                                        </circle>
-                                                        <ellipse cx="20" cy="22" rx="14" ry="14.5" fill="#242a2e"
-                                                            opacity="0.15"></ellipse>
-                                                        <circle cx="20" cy="20" r="14" fill="url(#grad-dial-base)"
-                                                            stroke="#242a2e" stroke-width="1.5">
-                                                        </circle>
-                                                        <circle cx="20" cy="20" r="13" fill="transparent"
-                                                            stroke="url(#grad-dial-highlight)" stroke-width="1.5">
-                                                        </circle>
-                                                        <circle class="dial-highlight" cx="20" cy="20" r="14"
-                                                            fill="#ffffff"></circle>
-                                                        <circle class="indicator-dot" cx="20" cy="30" r="1.5"
-                                                            fill="#4eccff"></circle>
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                            <div class="fl-studio-envelope__label">dec</div>
-                                        </div>
-                                        <div class="fl-studio-envelope__control">
-                                            <div accesskey="4"
-                                                class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes sustain">
-                                                <svg class="knob-input__visual" viewBox="0 0 40 40">
-                                                    <circle class="focus-indicator" cx="20" cy="20" r="18"
-                                                        fill="#4eccff" filter="url(#glow)">
-                                                    </circle>
-                                                    <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
-                                                        fill="#353b3f" stroke="#23292d"></circle>
-                                                    <path class="indicator-ring" d="M20,20Z" fill="#4eccff"></path>
-                                                    <g class="dial">
-                                                        <circle cx="20" cy="20" r="16"
-                                                            fill="url(#grad-dial-soft-shadow)">
-                                                        </circle>
-                                                        <ellipse cx="20" cy="22" rx="14" ry="14.5" fill="#242a2e"
-                                                            opacity="0.15"></ellipse>
-                                                        <circle cx="20" cy="20" r="14" fill="url(#grad-dial-base)"
-                                                            stroke="#242a2e" stroke-width="1.5">
-                                                        </circle>
-                                                        <circle cx="20" cy="20" r="13" fill="transparent"
-                                                            stroke="url(#grad-dial-highlight)" stroke-width="1.5">
-                                                        </circle>
-                                                        <circle class="dial-highlight" cx="20" cy="20" r="14"
-                                                            fill="#ffffff"></circle>
-                                                        <circle class="indicator-dot" cx="20" cy="30" r="1.5"
-                                                            fill="#4eccff"></circle>
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                            <div class="fl-studio-envelope__label">sus</div>
-                                        </div>
-                                        <div class="fl-studio-envelope__control">
-                                            <div accesskey="5"
-                                                class="knob-input fl-studio-envelope__knob envelope-knob envelope-knob_shapes release">
-                                                <svg class="knob-input__visual" viewBox="0 0 40 40">
-                                                    <circle class="focus-indicator" cx="20" cy="20" r="18"
-                                                        fill="#4eccff" filter="url(#glow)">
-                                                    </circle>
-                                                    <circle class="indicator-ring-bg" cx="20" cy="20" r="18"
-                                                        fill="#353b3f" stroke="#23292d"></circle>
-                                                    <path class="indicator-ring" d="M20,20Z" fill="#4eccff"></path>
-                                                    <g class="dial">
-                                                        <circle cx="20" cy="20" r="16"
-                                                            fill="url(#grad-dial-soft-shadow)">
-                                                        </circle>
-                                                        <ellipse cx="20" cy="22" rx="14" ry="14.5" fill="#242a2e"
-                                                            opacity="0.15"></ellipse>
-                                                        <circle cx="20" cy="20" r="14" fill="url(#grad-dial-base)"
-                                                            stroke="#242a2e" stroke-width="1.5">
-                                                        </circle>
-                                                        <circle cx="20" cy="20" r="13" fill="transparent"
-                                                            stroke="url(#grad-dial-highlight)" stroke-width="1.5">
-                                                        </circle>
-                                                        <circle class="dial-highlight" cx="20" cy="20" r="14"
-                                                            fill="#ffffff"></circle>
-                                                        <circle class="indicator-dot" cx="20" cy="30" r="1.5"
-                                                            fill="#4eccff"></circle>
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                            <div class="fl-studio-envelope__label">rel</div>
                                         </div>
                                     </div>
                                 </div>
@@ -1219,23 +1451,7 @@
                                                         <div class="fl-studio-envelope__visualizer">
                                                             <svg class="envelope-visualizer" viewBox="0 0 300 100"
                                                                 preserveAspectRatio="xMinYMid slice">
-                                                                <path class="envelope-shape" d="M0,100L0,0"
-                                                                    fill="transparent" stroke="#4eccff"
-                                                                    stroke-width="2"></path>
-                                                                <circle class="delay" cx="0" cy="100" r="6"
-                                                                    fill="#284554" stroke="#4eccff" stroke-width="2">
-                                                                </circle>
-                                                                <circle class="attack" cx="0" cy="0" r="6"
-                                                                    fill="#284554" stroke="#4eccff" stroke-width="2">
-                                                                </circle>
-                                                                <circle class="hold" cx="0" cy="0" r="6" fill="#284554"
-                                                                    stroke="#4eccff" stroke-width="2"></circle>
-                                                                <circle class="decay" cx="0" cy="100" r="6"
-                                                                    fill="#284554" stroke="#4eccff" stroke-width="2">
-                                                                </circle>
-                                                                <circle class="release" cx="0" cy="100" r="6"
-                                                                    fill="#284554" stroke="#4eccff" stroke-width="2">
-                                                                </circle>
+
                                                             </svg>
                                                         </div>
                                                         <div class="fl-studio-envelope__controls">
@@ -1925,8 +2141,10 @@
 
 
     <script src="/static/wave_device/device/window/device.js"></script>
-    <script src="/static/wave_device/device/waveshaper/waveshaper.js"></script>
+    <script src="/static/wave_device/device/window/wave_controls/wave_controls.js"></script>
     <script src="/static/sim/charts/plotting.js"></script>
+
+    <script src="/static/wave_device/device/core/waves_calc.js"></script>
 
     <script src="/static/wave_device/init.js"></script>
 
